@@ -7,7 +7,7 @@ theme = "mabuya"
 # avatar = "https://raw.githubusercontent.com/jakewilliami/jakewilliami.github.io/master/images/snufkin-avatar.jpg"
 
 compile_sass = true
-generate_feed = true
+generate_feeds = true  # zola.discourse.group/t/2175/2
 build_search_index = false
 ignored_content = ["**/_wip/*"]
 
