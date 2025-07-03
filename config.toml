@@ -3,7 +3,7 @@ default_language = "en"
 title = "Jake W. Ireland's Blog"
 description = "Blog for J. W. Ireland; computer programmer, psychologist, and mathematician"
 author = "Jake W. Ireland"
-theme = "mabuya"
+# theme = "mabuya"
 # avatar = "https://raw.githubusercontent.com/jakewilliami/jakewilliami.github.io/master/images/snufkin-avatar.jpg"
 
 compile_sass = true
