@@ -1,0 +1,37 @@
+// @use "normalize";
+@use "base";
+@use "variables";
+@use "post";
+@use "syntax";
+@use "pagination";
+@use "catalogue";
+@use "tags";
+@use "font";
+@use "footer";
+@use "custom";
+
+// Light theme Colors
+:root {
+  --default-color: #000;
+  --default-shade: #252525;
+  --default-tint: #808080;
+  --grey: #aaaaaa;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --code-color: #152f77;
+  --background-color: rgba(0, 0, 0, 0.05);
+  --link-color: #02aa3a;
+  --blockquote-color: #555;
+}
+
+// Dark theme colors
+[saved-theme="dark"] {
+  --default-color: rgb(255, 255, 255, 0.8);
+  --default-shade: #dddddd;
+  --default-tint: rgb(255, 255, 255, 0.6);
+  --grey: #dadada;
+  --shadow-color: #f8f8f8;
+  --code-color: #bf616a;
+  --background-color: #1e1e2e;
+  --link-color: #a6e3a1;
+  --blockquote-color: #cdd6f4;
+}

@@ -1,0 +1,81 @@
+@use "variables";
+
+footer {
+  font-family: variables.$serif-secondary;
+  padding: 1rem 0;
+  text-align: center;
+
+  span {
+    color: variables.$default-color;
+    font-size: 0.8rem;
+  }
+}
+
+.copyright {
+  a {
+    color: variables.$default-color;
+    font-family: variables.$sans-serif;
+    text-decoration: underline;
+  }
+}
+
+.navigation-footer {
+  a {
+    font-size: 0.8rem;
+    color: variables.$default-color;
+    font-family: variables.$serif-secondary;
+    // text-decoration: underline;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    @include variables.transition(all 0.2s ease-out);
+    color: variables.$default-color;
+    display: inline-block;
+    opacity: 0.7;
+    padding: 0 1rem 0 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navigation-footer {
+    float: none;
+    position: relative;
+  }
+  .copyright {
+    float: none;
+    position: relative;
+  }
+}
+
+@media (min-width: 801px) {
+  .navigation-footer {
+    float: right;
+    position: relative;
+    ul {
+      margin: 0;
+      padding-bottom: 1rem;
+    }
+  }
+  .copyright {
+    float: left;
+    position: relative;
+    top: 2px;
+    padding-bottom: 1rem;
+  }
+}

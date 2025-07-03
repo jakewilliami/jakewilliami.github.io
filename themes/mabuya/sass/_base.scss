@@ -1,0 +1,257 @@
+@use "variables";
+
+* {
+  // @include box-sizing;
+  line-height: 1.5;
+}
+
+html {
+  color: variables.$default-color;
+  background-color: variables.$background-color;
+}
+
+a {
+  color: var(--link-color);
+}
+
+html {
+  font-family: variables.$serif-primary;
+  font-size: 14px;
+  overflow-y: scroll;
+
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: variables.$default-shade;
+  font-family: variables.$sans-serif;
+  line-height: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 0.25rem solid variables.$grey;
+  color: variables.$blockquote-color;
+  margin: 0.8rem 0;
+  padding: 0.5rem 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 5rem 0 1.25rem;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 0 1rem;
+  max-width: 100%;
+}
+
+table {
+  margin: 0 auto;
+  color: variables.$default-shade;
+  border: 1px solid variables.$grey;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+
+table thead th,
+table tfoot th {
+  color: variables.$default-shade;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+table caption {
+  padding: 0.5em;
+}
+
+table th,
+table td {
+  padding: 0.5em;
+  border: 1px solid variables.$grey;
+}
+
+main,
+footer,
+.nav-container {
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 80%;
+}
+
+@media (max-width: 600px) {
+  main,
+  footer,
+  .nav-container {
+    width: 85%;
+  }
+}
+
+pre,
+code {
+  font-family: variables.$monospaced;
+}
+
+code {
+  background-color: variables.$grey;
+  border-radius: 3px;
+  color: variables.$code-color;
+  font-size: 85%;
+  padding: 0.25em 0.5em;
+}
+
+pre {
+  margin: 0 0 1rem;
+  overflow: auto;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  font-size: 100%;
+  padding: 0;
+  font: variables.$code-font;
+}
+
+.highlight {
+  background-color: variables.$grey;
+  border-radius: 3px;
+  line-height: 1.4;
+  margin: 0 0 1rem;
+  padding: 1rem;
+
+  pre {
+    margin-bottom: 0;
+    overflow-x: auto;
+  }
+
+  .lineno {
+    color: variables.$default-tint;
+    display: inline-block; // Ensures the null space also isn't selectable
+    padding: 0 0.75rem 0 0.25rem;
+    // Make sure numbers aren't selectable
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+}
+
+.nav {
+  box-shadow: 0 2px 2px -2px variables.$shadow-color;
+  overflow: auto;
+
+  &-container {
+    margin: 1rem auto;
+    position: relative;
+    text-align: center;
+  }
+
+  &-title {
+    @include variables.transition(all 0.2s ease-out);
+    color: variables.$default-color;
+    display: inline-block;
+    margin: 0;
+    padding-right: 0.2rem;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    @include variables.transition(all 0.2s ease-out);
+    color: variables.$default-color;
+    display: inline-block;
+    opacity: 0.6;
+    padding: 0 2rem 0 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  a {
+    color: variables.$default-color;
+    font-family: variables.$sans-serif;
+  }
+}
+
+@media (min-width: 600px) {
+  .nav {
+    &-container {
+      text-align: left;
+    }
+
+    ul {
+      bottom: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+// Justify text content on sections and index
+a div p {
+  text-align: justify;
+}
+
+.notfound {
+  position: relative;
+  text-align: center;
+  margin: 4rem 0;
+
+  &-error {
+    font-size: 4rem;
+    margin: 1rem 0;
+  }
+
+  &-line {
+    border-top: 0.4rem solid variables.$default-shade;
+    display: block;
+    margin: 0 auto 3rem;
+    width: 4rem;
+  }
+
+  &-message {
+    max-width: 25rem;
+    margin: 0 auto;
+  }
+}
+
+.footnote-definition {
+  sup {
+    top: -0.2.5em;
+    font-size: 0.75em;
+    display: inline;
+  }
+  p {
+    display: inline;
+  }
+}
