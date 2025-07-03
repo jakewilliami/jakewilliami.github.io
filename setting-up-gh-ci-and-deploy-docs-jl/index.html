@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+<article class="post">
+	<section class="post-info">
+		
+		<span>on&nbsp;</span><time datetime="2021-01-12">Tuesday, 12 January, 2021</time>
+	</section>
+	<h1 class="post-title">
+      Setting up CI on GitHub Actions, and deploying docs for Julia
+    </h1>
+	<section class="post-line"></section>
+	<p>I didn't know this when I first started learning Julia, but if you write a function; e.g.</p>
+<pre data-lang="julia" style="background-color:#282a36;color:#f8f8f2;" class="language-julia "><code class="language-julia" data-lang="julia"><span style="color:#ff79c6;">function </span><span style="color:#50fa7b;">my_sum</span><span>(a::T...) </span><span style="color:#ff79c6;">where </span><span>{T </span><span style="color:#ff79c6;">&lt;:</span><span> Number}
+</span><span>    </span><span style="color:#ff79c6;">return</span><span> reduce(</span><span style="color:#ff79c6;">+</span><span>, a)
+</span><span style="color:#ff79c6;">end
+</span></code></pre>
+<p>If you add a string immediately before the function definition:</p>
+<pre data-lang="julia" style="background-color:#282a36;color:#f8f8f2;" class="language-julia "><code class="language-julia" data-lang="julia"><span style="color:#6272a4;">&quot;This is my bad version of a sum function because it takes any number of values, but they all must be the same type of number.&quot;
+</span><span style="color:#ff79c6;">function </span><span style="color:#50fa7b;">my_sum</span><span>(a::T...) </span><span style="color:#ff79c6;">where </span><span>{T </span><span style="color:#ff79c6;">&lt;:</span><span> Number}
+</span><span>    </span><span style="color:#ff79c6;">return</span><span> reduce(</span><span style="color:#ff79c6;">+</span><span>, a)
+</span><span style="color:#ff79c6;">end
+</span><span>
+</span><span style="color:#6272a4;">&quot;&quot;&quot;
+</span><span style="color:#6272a4;">This is my...
+</span><span style="color:#6272a4;">
+</span><span style="color:#6272a4;">...multi-line comment.
+</span><span style="color:#6272a4;">
+</span><span style="color:#6272a4;">Pretty cool, huh?  Even has *markdown* `support`.
+</span><span style="color:#6272a4;">&quot;&quot;&quot;
+</span><span>my_identity_function(a) </span><span style="color:#ff79c6;">=</span><span> a
+</span></code></pre>
+<p>When you go into help mode (<code>?</code> in the Julia REPL), your string will display as documentation for that function:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>help?&gt; my_sum
+</span><span>search: my_sum
+</span><span>
+</span><span>  This is my bad version of a sum function because it takes any number of values, but they all must be the same type of number.
+</span><span>
+</span><span>help?&gt; my_identity_function
+</span><span>search: my_identity_function
+</span><span>
+</span><span>  This is my...
+</span><span>
+</span><span>  ...multi-line comment.
+</span><span>
+</span><span>  Pretty cool, huh? Even has markdown support.
+</span></code></pre>
+<p>Adding these, which are called "docstrings", are very useful for anyone using your package.  Furthermore, they are useful for you to come back to six months later, to remind yourself how exactly you use your functions and <code>struct</code>s, etc.</p>
+<p>There is a very helpful tool called <a href="https://github.com/JuliaDocs/Documenter.jl"><code>Documenter.jl</code></a> which takes advantage of those docstrings, and builds a documentation static website.  All you need to do is make five or so folders (directories), about three files, and of course have <code>Documenter.jl</code> installed.</p>
+<h2 id="1-installing-documenter-jl">1. Installing <code>Documenter.jl</code></h2>
+<p>To install <code>Documenter.jl</code>, you need to enter Julia's REPL and type</p>
+<pre data-lang="julia" style="background-color:#282a36;color:#f8f8f2;" class="language-julia "><code class="language-julia" data-lang="julia"><span>julia</span><span style="color:#ff79c6;">&gt; import</span><span> Pkg; Pkg.add(</span><span style="color:#f1fa8c;">&quot;Documenter&quot;</span><span>)
+</span></code></pre>
+<h2 id="2-creating-the-necessary-folders-for-documenter-jl">2. Creating the necessary <em>folders</em> for <code>Documenter.jl</code></h2>
+<p>From the command line, enter the directory in which your package lies.  For example, I might be in the folder <code>~/projects/MyCoolPackage.jl/</code>, which will probably look like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>.
+</span><span>├── LICENSE
+</span><span>├── Manifest.toml
+</span><span>├── Project.toml
+</span><span>├── README.md
+</span><span>├── src
+</span><span>│   └── MyCoolPackage.jl
+</span><span>└── test
+</span><span>    └── runtests.jl
+</span></code></pre>
+<p>Now run the following from the command line:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> mkdir</span><span style="font-style:italic;color:#ffb86c;"> -p</span><span> docs/build/</span><span style="color:#ff79c6;">; </span><span style="color:#50fa7b;">mkdir</span><span style="font-style:italic;color:#ffb86c;"> -p</span><span> docs/src/</span><span style="color:#ff79c6;">; </span><span style="color:#50fa7b;">mkdir</span><span style="font-style:italic;color:#ffb86c;"> -p</span><span> .github/workflows/
+</span></code></pre>
+<p>Now your directory structure should look something like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>.
+</span><span>├── .github
+</span><span>│   └── workflows
+</span><span>├── .gitignore
+</span><span>├── LICENSE
+</span><span>├── Manifest.toml
+</span><span>├── Project.toml
+</span><span>├── README.md
+</span><span>├── docs
+</span><span>│   ├── build
+</span><span>│   └── src
+</span><span>├── src
+</span><span>│   └──  MyCoolPackage.jl
+</span><span>└── test
+</span><span>    └── runtests.jl
+</span></code></pre>
+<h2 id="3-creating-the-necessary-files-for-documenter-jl">3. Creating the necessary <em>files</em> for <code>Documenter.jl</code></h2>
+<p>From the command line, run the following:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> touch docs/src/index.md</span><span style="color:#ff79c6;">; </span><span style="color:#50fa7b;">touch</span><span> docs/make.jl</span><span style="color:#ff79c6;">; </span><span style="color:#50fa7b;">touch</span><span> .github/workflows/CI.yml
+</span></code></pre>
+<p>Now (this is an <em>important step</em>) you need to run</p>
+<pre data-lang="julia" style="background-color:#282a36;color:#f8f8f2;" class="language-julia "><code class="language-julia" data-lang="julia"><span style="color:#ff79c6;">$</span><span> cd docs
+</span><span>
+</span><span style="color:#ff79c6;">$</span><span> julia </span><span style="color:#ff79c6;">--</span><span>project</span><span style="color:#ff79c6;">=
+</span><span>
+</span><span>julia</span><span style="color:#ff79c6;">&gt; import</span><span> Pkg; Pkg.activate(</span><span style="color:#f1fa8c;">&quot;.&quot;</span><span>)
+</span><span>
+</span><span>julia</span><span style="color:#ff79c6;">&gt;</span><span> Pkg.add(</span><span style="color:#f1fa8c;">&quot;Documenter&quot;</span><span>)
+</span><span>
+</span><span>julia</span><span style="color:#ff79c6;">&gt;</span><span> Pkg.add(</span><span style="color:#f1fa8c;">&quot;&quot;</span><span>) </span><span style="color:#6272a4;"># HERE YOU NEED TO INSTALL ANY DEPENDENCIES YOUR PACKAGE HAS
+</span></code></pre>
+<p>Now that you have <strong>installed any dependencies your package has in the <code>docs</code> folder</strong>, your directory structure will look something like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>.
+</span><span>├── .github
+</span><span>│   └── workflows
+</span><span>│       ├── CI.yml
+</span><span>│       ├── CompatHelper.yml
+</span><span>│       └── TagBot.yml
+</span><span>├── .gitignore
+</span><span>├── LICENSE
+</span><span>├── Manifest.toml
+</span><span>├── Project.toml
+</span><span>├── README.md
+</span><span>├── docs
+</span><span>│   ├── Manifest.toml
+</span><span>│   ├── Project.toml
+</span><span>│   ├── build
+</span><span>│   ├── make.jl
+</span><span>│   └── src
+</span><span>│       └── index.md
+</span><span>├── examples
+</span><span>│   ├── Manifest.toml
+</span><span>│   ├── Project.toml
+</span><span>│   ├── basic.jl
+</span><span>│   └── tm.jl
+</span><span>├── src
+</span><span>│   └── MyCoolPackage.jl
+</span><span>└── test
+</span><span>    └── runtests.jl
+</span></code></pre>
+<p>You may notice some other files in <code>.github/workflows/</code>.  Scroll to the end to find out what they contain and how they work.</p>
+<p><strong>This is good.</strong>  We are making good progress.</p>
+<h2 id="4-writing-to-the-files">4. Writing to the files</h2>
+<p>Now that all necessary files are made, it is time to fill them up.  I will paste here the bare-bones of working code:</p>
+<h4 id="docs-make-jl"><code>docs/make.jl</code></h4>
+<p>This file is the file that is run when the documentation is being made.  This is arguably the most important file, and should contain at least one function call on <em>how</em> to make the documentation.  Usually you will also want a function call to tell <code>Documenter.jl</code> how to <em>deploy</em> the docs (which is where <code>.github/workflows/CI.yml</code> come into play, but I will get to that soon).  This is an example of the <code>make.jl</code> file:</p>
+<pre data-lang="julia" style="background-color:#282a36;color:#f8f8f2;" class="language-julia "><code class="language-julia" data-lang="julia"><span>include(joinpath(dirname(@</span><span style="color:#8be9fd;">__DIR__</span><span>), </span><span style="color:#f1fa8c;">&quot;src&quot;</span><span>, </span><span style="color:#f1fa8c;">&quot;MyCoolPackage.jl&quot;</span><span>))
+</span><span style="color:#ff79c6;">using</span><span> Documenter, .MyCoolPackage
+</span><span>
+</span><span>Documenter.makedocs(
+</span><span>    clean </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">true</span><span>,
+</span><span>    doctest </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">true</span><span>,
+</span><span>    modules </span><span style="color:#ff79c6;">=</span><span> Module[MyCoolPackage],
+</span><span>    repo </span><span style="color:#ff79c6;">= </span><span style="color:#f1fa8c;">&quot;&quot;</span><span>,
+</span><span>    highlightsig </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">true</span><span>,
+</span><span>    sitename </span><span style="color:#ff79c6;">= </span><span style="color:#f1fa8c;">&quot;MyCoolPackage Documentation&quot;</span><span>,
+</span><span>    expandfirst </span><span style="color:#ff79c6;">= </span><span>[],
+</span><span>    pages </span><span style="color:#ff79c6;">= </span><span>[
+</span><span>        </span><span style="color:#f1fa8c;">&quot;Index&quot; </span><span style="color:#ff79c6;">=&gt; </span><span style="color:#f1fa8c;">&quot;index.md&quot;</span><span>,
+</span><span>    ]
+</span><span>)
+</span><span>
+</span><span>deploydocs(;
+</span><span>    repo  </span><span style="color:#ff79c6;">=  </span><span style="color:#f1fa8c;">&quot;github.com/username/MyCoolPackage.jl.git&quot;</span><span>,
+</span><span>)
+</span></code></pre>
+<h4 id="docs-src-index-md"><code>docs/src/index.md</code></h4>
+<p>This file will tell <code>Documenter.jl</code> how to structure your documentation.  Once again, here is an extremely simple example:</p>
+<pre data-lang="markdown" style="background-color:#282a36;color:#f8f8f2;" class="language-markdown "><code class="language-markdown" data-lang="markdown"><span style="color:#8be9fd;"># MyCoolPackage.jl Documentation
+</span><span>
+</span><span>```@contents
+</span><span>```
+</span><span>
+</span><span>```@meta
+</span><span>CurrentModule = MyCoolPackage
+</span><span>DocTestSetup = quote
+</span><span>    using MyCoolPackage
+</span><span>end
+</span><span>```
+</span><span>
+</span><span style="color:#8be9fd;">## Adding MyCoolPackage.jl
+</span><span>```@repl
+</span><span>using Pkg
+</span><span>Pkg.add(&quot;MyCoolPackage&quot;)
+</span><span>```
+</span><span>
+</span><span style="color:#8be9fd;">## Documentation
+</span><span>```@autodocs
+</span><span>Modules = [MyCoolPackage]
+</span><span>```
+</span><span>
+</span><span style="color:#8be9fd;">## Index
+</span><span>
+</span><span>```@index
+</span><span>```
+</span></code></pre>
+<h4 id="github-workflows-ci-yml"><code>.github/workflows/CI.yml</code></h4>
+<p>Finally, this is the CI (continuous integration) part, which <em>actually does the deploying</em>.  All you need to have is something like the following:</p>
+<pre data-lang="yaml" style="background-color:#282a36;color:#f8f8f2;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">CI
+</span><span style="color:#6272a4;"># Run on master, tags, or any pull request
+</span><span style="color:#bd93f9;">on</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">schedule</span><span>:
+</span><span>    - </span><span style="color:#ff79c6;">cron</span><span>: </span><span style="color:#f1fa8c;">&#39;0 2 * * *&#39;  </span><span style="color:#6272a4;"># Daily at 2 AM UTC (8 PM CST)
+</span><span>  </span><span style="color:#ff79c6;">push</span><span>:
+</span><span>    </span><span style="color:#ff79c6;">branches</span><span>: [</span><span style="color:#f1fa8c;">master</span><span>]
+</span><span>    </span><span style="color:#ff79c6;">tags</span><span>: [</span><span style="color:#f1fa8c;">&quot;*&quot;</span><span>]
+</span><span>  </span><span style="color:#ff79c6;">pull_request</span><span>:
+</span><span style="color:#ff79c6;">jobs</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">test</span><span>:
+</span><span>    </span><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }}
+</span><span>    </span><span style="color:#ff79c6;">runs-on</span><span>: </span><span style="color:#f1fa8c;">${{ matrix.os }}
+</span><span>    </span><span style="color:#ff79c6;">strategy</span><span>:
+</span><span>      </span><span style="color:#ff79c6;">fail-fast</span><span>: </span><span style="color:#bd93f9;">false
+</span><span>      </span><span style="color:#ff79c6;">matrix</span><span>:
+</span><span>        </span><span style="color:#ff79c6;">version</span><span>:
+</span><span>          - </span><span style="color:#f1fa8c;">&quot;1.5&quot;   </span><span style="color:#6272a4;"># current
+</span><span>          - </span><span style="color:#f1fa8c;">&quot;nightly&quot;   </span><span style="color:#6272a4;"># Latest Release
+</span><span>        </span><span style="color:#ff79c6;">os</span><span>:
+</span><span>          - </span><span style="color:#f1fa8c;">ubuntu-latest
+</span><span>          - </span><span style="color:#f1fa8c;">macOS-latest
+</span><span>          - </span><span style="color:#f1fa8c;">windows-latest
+</span><span>        </span><span style="color:#ff79c6;">arch</span><span>:
+</span><span>          - </span><span style="color:#f1fa8c;">x64
+</span><span>          - </span><span style="color:#f1fa8c;">x86 </span><span style="color:#6272a4;"># 32-bit; i686
+</span><span>        </span><span style="color:#ff79c6;">exclude</span><span>:
+</span><span>          </span><span style="color:#6272a4;"># 32-bit Julia binaries are not available on macOS
+</span><span>          - </span><span style="color:#ff79c6;">os</span><span>: </span><span style="color:#f1fa8c;">macOS-latest
+</span><span>            </span><span style="color:#ff79c6;">arch</span><span>: </span><span style="color:#f1fa8c;">x86
+</span><span>    </span><span style="color:#ff79c6;">steps</span><span>:
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">actions/checkout@v2
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">julia-actions/setup-julia@v1
+</span><span>        </span><span style="color:#ff79c6;">with</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">version</span><span>: </span><span style="color:#f1fa8c;">${{ matrix.version }}
+</span><span>          </span><span style="color:#ff79c6;">arch</span><span>: </span><span style="color:#f1fa8c;">${{ matrix.arch }}
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">actions/cache@v1
+</span><span>        </span><span style="color:#ff79c6;">env</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">cache-name</span><span>: </span><span style="color:#f1fa8c;">cache-artifacts
+</span><span>        </span><span style="color:#ff79c6;">with</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">path</span><span>: </span><span style="color:#f1fa8c;">~/.julia/artifacts
+</span><span>          </span><span style="color:#ff79c6;">key</span><span>: </span><span style="color:#f1fa8c;">${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles(&#39;**/Project.toml&#39;) }}
+</span><span>          </span><span style="color:#ff79c6;">restore-keys</span><span>: </span><span style="color:#ff79c6;">|
+</span><span style="color:#f1fa8c;">            ${{ runner.os }}-test-${{ env.cache-name }}-
+</span><span style="color:#f1fa8c;">            ${{ runner.os }}-test-
+</span><span style="color:#f1fa8c;">            ${{ runner.os }}-
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">julia-actions/julia-buildpkg@latest
+</span><span>      - </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#ff79c6;">|
+</span><span style="color:#f1fa8c;">          git config --global user.name Tester
+</span><span style="color:#f1fa8c;">          git config --global user.email te@st.er
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">julia-actions/julia-runtest@latest
+</span><span>
+</span><span>  </span><span style="color:#ff79c6;">docs</span><span>:
+</span><span>    </span><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">Documentation
+</span><span>    </span><span style="color:#ff79c6;">runs-on</span><span>: </span><span style="color:#f1fa8c;">ubuntu-latest
+</span><span>    </span><span style="color:#ff79c6;">steps</span><span>:
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">actions/checkout@v2
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">julia-actions/setup-julia@v1
+</span><span>        </span><span style="color:#ff79c6;">with</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">version</span><span>: </span><span style="color:#f1fa8c;">&#39;1&#39;
+</span><span>      - </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#ff79c6;">|
+</span><span style="color:#f1fa8c;">          git config --global user.name name
+</span><span style="color:#f1fa8c;">          git config --global user.email email
+</span><span style="color:#f1fa8c;">          git config --global github.user username
+</span><span>      - </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#ff79c6;">|
+</span><span style="color:#f1fa8c;">          julia --project=docs -e &#39;
+</span><span style="color:#f1fa8c;">            using Pkg;
+</span><span style="color:#f1fa8c;">            Pkg.develop(PackageSpec(path=pwd()));
+</span><span style="color:#f1fa8c;">            Pkg.instantiate();&#39;
+</span><span>      - </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#f1fa8c;">julia --project=docs docs/make.jl
+</span><span>        </span><span style="color:#ff79c6;">env</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">GITHUB_TOKEN</span><span>: </span><span style="color:#f1fa8c;">${{ secrets.GITHUB_TOKEN }}
+</span><span>
+</span></code></pre>
+<p>The first part of this file will run some tests, and the second part will deploy the documentation.</p>
+<p><strong>Push all of this to the repo.</strong></p>
+<h2 id="6-allowing-branch-gh-pages-to-be-accessed-by-username-github-io-to-deploy-docs-the-final-step">6. Allowing branch <code>gh-pages</code> to be accessed by <code>username.github.io</code> to deploy docs — the <em>final</em> step</h2>
+<p>The last thing we need to do is to go to your repository at <a href="https://github.com/username/MyCoolPackage.jl/">https://github.com/username/MyCoolPackage.jl/</a>, go into <code>Settings &gt; Options &gt; GitHub Pages</code>, and select the <code>gh-pages</code> branch, then press save.  This will allow GitHub Pages to access the <code>gh-pages</code> branch created by <code>Documenter.jl</code>.</p>
+<p><strong>And you are done!</strong></p>
+<h2 id="post-script-other-notes">Post Script: other notes.</h2>
+<p>You might want to add some tags to your <code>README.md</code>:</p>
+<pre data-lang="markdown" style="background-color:#282a36;color:#f8f8f2;" class="language-markdown "><code class="language-markdown" data-lang="markdown"><span>&lt;</span><span style="color:#ff79c6;">h1 </span><span style="color:#50fa7b;">align</span><span>=</span><span style="color:#f1fa8c;">&quot;center&quot;</span><span>&gt;
+</span><span>    MyCoolPackage.jl
+</span><span>&lt;/</span><span style="color:#ff79c6;">h1</span><span>&gt;
+</span><span>
+</span><span style="color:#6272a4;">&lt;!-- [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://username.github.io/MyCoolPackage.jl/stable) --&gt;
+</span><span>[![Dev](</span><span style="text-decoration:underline;color:#bd93f9;">https://img.shields.io/badge/docs-dev-blue.svg</span><span>)](</span><span style="text-decoration:underline;color:#bd93f9;">https://username.github.io/MyCoolPackage.jl/dev</span><span>)
+</span><span>[![CI](</span><span style="text-decoration:underline;color:#bd93f9;">https://github.com/invenia/PkgTemplates.jl/workflows/CI/badge.svg</span><span>)](</span><span style="text-decoration:underline;color:#bd93f9;">https://github.com/username/MyCoolPackage.jl/actions?query=workflow%3ACI</span><span>)
+</span><span>[![Code Style: Blue](</span><span style="text-decoration:underline;color:#bd93f9;">https://img.shields.io/badge/code%20style-blue-4495d1.svg</span><span>)](</span><span style="text-decoration:underline;color:#bd93f9;">https://github.com/invenia/BlueStyle</span><span>)
+</span><span>![Project Status](</span><span style="text-decoration:underline;color:#bd93f9;">https://img.shields.io/badge/status-maturing-green</span><span>)
+</span></code></pre>
+<p>There are two other workflows I really like to have: one is a <code>CompatHelper</code>, which ensures your package's dependencies stay up-to-date; and one is <code>TagBot</code>, which will automatically update the version number based on the version of your package.</p>
+<p>Here are the files:</p>
+<h4 id="compathelper-yml"><code>CompatHelper.yml</code></h4>
+<pre data-lang="yaml" style="background-color:#282a36;color:#f8f8f2;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">CompatHelper
+</span><span style="color:#bd93f9;">on</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">schedule</span><span>:
+</span><span>    - </span><span style="color:#ff79c6;">cron</span><span>: </span><span style="color:#f1fa8c;">0 0 * * *
+</span><span>  </span><span style="color:#ff79c6;">workflow_dispatch</span><span>:
+</span><span style="color:#ff79c6;">jobs</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">CompatHelper</span><span>:
+</span><span>    </span><span style="color:#ff79c6;">runs-on</span><span>: </span><span style="color:#f1fa8c;">ubuntu-latest
+</span><span>    </span><span style="color:#ff79c6;">steps</span><span>:
+</span><span>      - </span><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">Pkg.add(&quot;CompatHelper&quot;)
+</span><span>        </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#f1fa8c;">julia -e &#39;using Pkg; Pkg.add(&quot;CompatHelper&quot;)&#39;
+</span><span>      - </span><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">CompatHelper.main()
+</span><span>        </span><span style="color:#ff79c6;">env</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">GITHUB_TOKEN</span><span>: </span><span style="color:#f1fa8c;">${{ secrets.GITHUB_TOKEN }}
+</span><span>          </span><span style="color:#ff79c6;">COMPATHELPER_PRIV</span><span>: </span><span style="color:#f1fa8c;">${{ secrets.DOCUMENTER_KEY }}
+</span><span>        </span><span style="color:#ff79c6;">run</span><span>: </span><span style="color:#f1fa8c;">julia -e &#39;using CompatHelper; CompatHelper.main()&#39;
+</span></code></pre>
+<h4 id="tagbot-yml"><code>TagBot.yml</code></h4>
+<pre data-lang="yaml" style="background-color:#282a36;color:#f8f8f2;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#ff79c6;">name</span><span>: </span><span style="color:#f1fa8c;">TagBot
+</span><span style="color:#bd93f9;">on</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">schedule</span><span>:
+</span><span>    - </span><span style="color:#ff79c6;">cron</span><span>: </span><span style="color:#f1fa8c;">0 0 * * *
+</span><span>  </span><span style="color:#ff79c6;">workflow_dispatch</span><span>:
+</span><span style="color:#ff79c6;">jobs</span><span>:
+</span><span>  </span><span style="color:#ff79c6;">TagBot</span><span>:
+</span><span>    </span><span style="color:#ff79c6;">runs-on</span><span>: </span><span style="color:#f1fa8c;">ubuntu-latest
+</span><span>    </span><span style="color:#ff79c6;">steps</span><span>:
+</span><span>      - </span><span style="color:#ff79c6;">uses</span><span>: </span><span style="color:#f1fa8c;">JuliaRegistries/TagBot@v1
+</span><span>        </span><span style="color:#ff79c6;">with</span><span>:
+</span><span>          </span><span style="color:#ff79c6;">token</span><span>: </span><span style="color:#f1fa8c;">${{ secrets.GITHUB_TOKEN }}
+</span><span>          </span><span style="color:#ff79c6;">ssh</span><span>: </span><span style="color:#f1fa8c;">${{ secrets.DOCUMENTER_KEY }}
+</span></code></pre>
+
+</article>
+
+<section class="pagination">
+	<a href="https://jakewilliami.github.io/increasing-trackpad-speed-more-than-maximum-mac/" class="left arrow">&#8592;</a>
+	<a href="#" class="top">Top</a>
+	<a href="https://jakewilliami.github.io/iterm256-approx-colours/" class="right arrow">&#8594;</a>
+</section>
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+<article class="post">
+	<section class="post-info">
+		
+		<span>on&nbsp;</span><time datetime="2019-08-19">Monday, 19 August, 2019</time>
+	</section>
+	<h1 class="post-title">
+      First Notes from a UNIX, Git and R Workshop
+    </h1>
+	<section class="post-line"></section>
+	<p>Though I had expressed in my first notebook, in late 2018 at nerve.fancy.chained, that I wanted to "learn terminal" (I obviously didn't know what "terminal" was...), and though I had used ample Excel over the summer of 2018--2019 working in Sue Schenk's lab., I didn't actually do any "proper" programming until relatively recently.</p>
+<p>I only really went to it for <code>R</code>, but I am so glad I did.  I guess it was the push-start I needed.  After this, I talked to D. about <code>Git</code> and we ended up starting to make a Minecraft mod together.  The rest was history, I suppose.  I started using Julia in late September, 2019, after using Java with D. for a month or so.  Those were great times.  It was getting warmer, after August, and D. and I were still at university together.  We would come home and work on the mod, sometimes with a drink of Coke, and stay doing so till it was dark and we were hungry.  During that time, I did a <i>lot</i> of programming in <code>Bash</code>.  I created my <a href="https://github.com/jakewilliami/scripts.git/"><code>scripts</code></a> repository, which hosted all of these very buggy programmes written in bash.  It was in this playground where I also learned a little about other languages: namely <code>Perl</code>, <code>Ruby</code>, <code>Rust</code>, and <code>Python</code>.</p>
+<p>Transcribed here are my initial, very shorthand notes from a workshop I went to at V.U.W. on <code>UNIX</code>, <code>Git</code>  and <code>R</code>.</p>
+<hr />
+<h2 id="unix-git-and-r-workship-day-1"><code>UNIX</code>, <code>Git</code>, and <code>R</code> workship —: Day 1</h2>
+<h3 id="bash-bourne-again-shell">Bash (Bourne Again Shell)</h3>
+<p>Bash is programmable!</p>
+<ul>
+<li>The GUI is intuitive and user-friendly
+<ul>
+<li>Bash can do the same things, but automatically, &gt; 1,000 times.</li>
+</ul>
+</li>
+<li><code>ls</code> = listing command</li>
+<li>The file system arranges things in hierarchy</li>
+<li><code>pwd</code> = print working directory
+Note: the <code>ls</code> command, unless specified otherwise, will list the contents of the present working directory</li>
+<li><code>cd</code> = takes you back to your home directory</li>
+<li><code>-</code> = tells it is an option for a command (also called a "flag")</li>
+<li><code>cd 〈path〉</code> = sets working directory</li>
+<li><code>ls 〈path〉</code> = lists contents of path</li>
+<li><code>man ls</code> = find the <code>man</code>(ual) page
+<ul>
+<li>Press q to quit.</li>
+<li>Some systems may require you to use <code>ls --help</code>.</li>
+</ul>
+</li>
+<li><code>ls -l</code> = long listing (in bytes)</li>
+<li><code>ls -l -h</code> ≡ <code>ls -lh</code> = human readible form</li>
+<li><code>ls ~</code> ≡ <code>ls $HOME</code> &amp;equiv <code>ls</code>
+Paths usually start with <code>/</code></li>
+<li><code>cd</code> = change directory</li>
+<li><code>cd ..</code> = moves to parent directory</li>
+<li><code>cd ../../</code> = parent of parent</li>
+<li><code>ls -a</code> = list all (including hidden files)</li>
+<li><code>.</code> = shortcut for current directory</li>
+<li><code>~/〈path〉</code> = expands to home directory + path</li>
+<li><code>cd -</code> = previous working directory</li>
+</ul>
+<h4 id="relative-vs-absolute-paths">Relative vs. absolute paths</h4>
+<ul>
+<li><code>mkdir</code> = make directory</li>
+<li><code>mv</code> = move</li>
+<li><code>touch</code> = make file</li>
+<li><code>cp</code> = copy</li>
+<li><code>rm</code> = remove</li>
+<li><code>rm -i</code> = are you sure you want to delete?</li>
+<li><code>more 〈file〉</code> = shows file</li>
+<li>'<code>*</code>' = names ending with <code>*〈name end〉</code></li>
+<li>'<code>?</code>' = single character wild-card</li>
+<li><code>clear</code> = clear terminal (note: can still scroll up unless configured otherwise)</li>
+</ul>
+<blockquote>
+<p>Note:
+A note on spaces in path names: they need to be "escaped" using a backslash:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;">cd</span><span> Victoria</span><span style="color:#ff79c6;">\ </span><span>University/
+</span></code></pre>
+</blockquote>
+<ul>
+<li><code>open &lt;path&gt;</code> = opens a path</li>
+<li><code>wc</code> = word count</li>
+<li><code>wc -c</code> = characters</li>
+<li><code>wc -l *.pdb &gt; lengths.txt</code> = makes lengths file and puts lengths of pdb files in there</li>
+<li><code>cat</code> = concatenate [similar to <code>more</code>]</li>
+<li>'<code>&gt;</code>' = redirects output into file</li>
+<li>'<code>&gt;&gt;</code>' <em>appends</em> file (adds to it instead of overwriting it)</li>
+<li><code>head</code> = prints n head lines of each file</li>
+<li><code>tail</code> = ... bottom lines</li>
+<li><code>head 2 *.pdb</code> = first 2 lines of all pdb files</li>
+<li>'<code>|</code>' = "pipe" (kind of like subset)</li>
+</ul>
+<blockquote>
+<p>E.g.</p>
+<ul>
+<li><code>sort -n lengths.txt | head -n 1</code>
+Sorts lengths.txt and then of those, prints the first line</li>
+</ul>
+</blockquote>
+<ul>
+<li><code>man</code> = manual</li>
+<li><code>cut -d</code> = separate each line</li>
+<li><code>-f</code> = give back fields</li>
+<li><code>-d</code> = delmiter
+<ul>
+<li><code>-d ,</code> = comma as your delimiter
+<code>man &lt;command&gt;</code> is your friend!</li>
+</ul>
+</li>
+<li><code>uniq</code> = fills out adjacent matching lines (only unique commands)</li>
+</ul>
+<blockquote>
+<p>Note:
+After day 1 of the tutorial, I actually went home and changed my bash prompt.  The following code, I put in my <code>.bashrc</code>:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#6272a4;"># get current branch in git repo
+</span><span style="font-style:italic;color:#8be9fd;">function </span><span style="color:#50fa7b;">parse_git_branch</span><span>() {
+</span><span>	</span><span style="color:#ffffff;">BRANCH</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#50fa7b;">git</span><span style="color:#f1fa8c;"> branch </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">sed</span><span style="font-style:italic;color:#ffb86c;"> -e </span><span style="color:#f1fa8c;">&#39;/^[^*]/d&#39;</span><span style="font-style:italic;color:#ffb86c;"> -e </span><span style="color:#f1fa8c;">&#39;s/* \(.*\)/\1/&#39;)
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#ff79c6;">! </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">BRANCH</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;&quot; </span><span style="color:#8be9fd;">]
+</span><span>	</span><span style="color:#ff79c6;">then
+</span><span>		</span><span style="color:#ffffff;">STAT</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#50fa7b;">parse_git_dirty</span><span style="color:#f1fa8c;">)
+</span><span>		</span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;[${</span><span style="color:#ffffff;">BRANCH</span><span style="color:#f1fa8c;">}${</span><span style="color:#ffffff;">STAT</span><span style="color:#f1fa8c;">}]&quot;
+</span><span>	</span><span style="color:#ff79c6;">else
+</span><span>		</span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>}
+</span><span>
+</span><span style="color:#6272a4;"># get current status of git repo
+</span><span style="font-style:italic;color:#8be9fd;">function </span><span style="color:#50fa7b;">parse_git_dirty </span><span>{
+</span><span>	</span><span style="color:#ffffff;">status</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#50fa7b;">git</span><span style="color:#f1fa8c;"> status </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;&amp;</span><span style="color:#bd93f9;">1 </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">tee</span><span style="color:#f1fa8c;">)
+</span><span>	</span><span style="color:#ffffff;">dirty</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;modified:&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>	</span><span style="color:#ffffff;">untracked</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;Untracked files&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>	</span><span style="color:#ffffff;">ahead</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;Your branch is ahead of&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>	</span><span style="color:#ffffff;">newfile</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;new file:&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>	</span><span style="color:#ffffff;">renamed</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;renamed:&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>    </span><span style="color:#ffffff;">deleted</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">$(</span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-n </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">status</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">&gt;</span><span style="color:#f1fa8c;"> /dev/null </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep </span><span style="color:#f1fa8c;">&quot;deleted:&quot; </span><span style="color:#ff79c6;">&amp;&gt;</span><span style="color:#f1fa8c;"> /dev/null</span><span style="color:#ff79c6;">; </span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;$</span><span style="color:#bd93f9;">?</span><span style="color:#f1fa8c;">&quot;)
+</span><span>  </span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&#39;&#39;
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">renamed</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;&gt;${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">ahead</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;*${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>   </span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">newfile</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;+${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">untracked</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;?${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">deleted</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;x${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>   </span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">dirty</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;0&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#ffffff;">bits</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;!${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>   </span><span style="color:#ff79c6;">fi
+</span><span>	</span><span style="color:#ff79c6;">if </span><span style="color:#8be9fd;">[ </span><span style="color:#ff79c6;">! </span><span style="color:#f1fa8c;">&quot;${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot; </span><span style="color:#ff79c6;">== </span><span style="color:#f1fa8c;">&quot;&quot; </span><span style="color:#8be9fd;">]</span><span style="color:#ff79c6;">; then
+</span><span>		</span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot; ${</span><span style="color:#ffffff;">bits</span><span style="color:#f1fa8c;">}&quot;
+</span><span>	</span><span style="color:#ff79c6;">else
+</span><span>		</span><span style="color:#8be9fd;">echo </span><span style="color:#f1fa8c;">&quot;&quot;
+</span><span>	</span><span style="color:#ff79c6;">fi
+</span><span>}
+</span><span>
+</span><span style="color:#6272a4;"># make prompt pretty
+</span><span style="color:#ffffff;">PS1</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;\n\[\033[0;31m\]\342\224\214\342\224\200</span><span style="color:#ff79c6;">\$</span><span style="color:#f1fa8c;">()[\[\033[1;38;5;2m\]\u\[\033[0;1m\]@\033[1;33m\]\h: \[\033[1;34m\]\W\[\033[1;33m\]\[\033[0;31m\]]\[\033[0;32m\] \[\033[1;33m\]</span><span style="color:#ff79c6;">\`</span><span style="color:#f1fa8c;">parse_git_branch</span><span style="color:#ff79c6;">\`</span><span style="color:#f1fa8c;">\[\033[0;31m\]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0;1m\]</span><span style="color:#ff79c6;">\$</span><span style="color:#f1fa8c;">\[\033[0;38m\] &quot;
+</span><span style="color:#ff79c6;">export </span><span style="color:#ffffff;">PS1
+</span></code></pre>
+<p>Also in this time I decided on a colour scheme for my terminal.  Choose something nice to look at that makes you comfortable.</p>
+</blockquote>
+<h4 id="loops">Loops</h4>
+<ul>
+<li><code>&gt;</code>: when pressed enter, this is telling you that you need more information to complete the command.</li>
+</ul>
+<blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;">cd </span><span style="color:#bd93f9;">~</span><span>/Desktop/Git_Unix_R_Workshop/Day_1/data-shell/creatures
+</span><span style="color:#ff79c6;">for</span><span> filename </span><span style="color:#ff79c6;">in *</span><span>.dat
+</span><span style="color:#ff79c6;">do
+</span><span>    </span><span style="color:#50fa7b;">head</span><span style="font-style:italic;color:#ffb86c;"> -n</span><span> 2 $</span><span style="color:#ffffff;">filename </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">tail</span><span style="font-style:italic;color:#ffb86c;"> -n</span><span> 1
+</span><span style="color:#ff79c6;">done
+</span></code></pre>
+</blockquote>
+<blockquote>
+<p>"Don't name your variables <code>cheesecake</code>; you'll have no idea what they're doing when you come back to it in three weeks' time."</p>
+</blockquote>
+<p>Note that the following code excerpts are <em>NOT</em> equivalent:</p>
+<blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">for</span><span> datafile </span><span style="color:#ff79c6;">in *</span><span>.pdf</span><span style="color:#ff79c6;">; do </span><span style="color:#50fa7b;">ls </span><span style="color:#ff79c6;">*</span><span>.pdb</span><span style="color:#ff79c6;">; done
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">for</span><span> datafile </span><span style="color:#ff79c6;">in *</span><span>.pdf</span><span style="color:#ff79c6;">; do </span><span style="color:#50fa7b;">ls </span><span>$</span><span style="color:#ffffff;">datafile</span><span style="color:#ff79c6;">; done
+</span></code></pre>
+</blockquote>
+<ul>
+<li><code>&lt;cmd&gt; &amp;&amp; &lt;cmd 2&gt;</code> = run <code>&lt;cmd&gt;</code>; if successful, run <code>&lt;cmd 2&gt;</code></li>
+<li><code>grep</code> = Global Regular Expression Print (finding text)
+<ul>
+<li>E.g.,</li>
+<li><code>grep &lt;word&gt; &lt;file&gt;</code></li>
+<li><code>-i</code> = case <u>in</u>sensitive</li>
+<li><code>-w</code> = whole <u>w</u>ord</li>
+<li><code>-n</code> = line <u>n</u>umbers</li>
+<li><code>-v</code> = when it <em>doesn't</em> match (in<u>v</u>ert)</li>
+<li>E.g.,</li>
+<li><code>grep -E '^.o' haiku.txt</code></li>
+</ul>
+</li>
+<li><code>find</code> = finding files
+<ul>
+<li>E.g.,</li>
+<li><code>find . -type [f∨d]</code></li>
+<li><code>find . -name '*.txt'</code></li>
+<li><code>find . -type f -mtime -1 -user jakeireland</code> = finds files updated in past day but user <code>jakeireland</code></li>
+</ul>
+</li>
+<li><code>'$'&lt;name&gt;</code> = call a variable named <code>&lt;name&gt;</code></li>
+</ul>
+<h3 id="git"><code>git</code></h3>
+<p>Version control system: track changes of file over time</p>
+<p>Git has become popular in version control; and scalable!  Originally developed by Linux kernel guy.</p>
+<blockquote>
+<p>Note: since this workshop, I have learned that, the Linux guy (whose name is Linus) has two tools named after him: the Linux operating system (similar-sounding to his name), and <code>git</code>, because he is one (self-proclaimed; I am not insulting him)!</p>
+</blockquote>
+<p>(Android = Linux kernel!  So yes, you <em>have</em> heard of Linux).</p>
+<p>A kernel is the part of the operating system that talks to the device</p>
+<p>We first need to configure out <code>git</code> environment, for our terminal to know our <code>git</code> credentials.  We run</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">git</span><span> config</span><span style="font-style:italic;color:#ffb86c;"> --global</span><span> user.name </span><span style="color:#f1fa8c;">&quot;&lt;name&gt;&quot;
+</span></code></pre>
+<p>If colaborating, be carefule of differing operating systems; line endings can cause merge issues.</p>
+<p>Now we want to say</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">git</span><span> init
+</span></code></pre>
+<p>to initialise the repository.</p>
+<p>Running <code>ls -la</code> will give us a long listing and include hidden files within the directory (files beginning with <code>.</code>).  Some files need to be there but aren't useful to use (only the computer), so they often remain hidden.</p>
+<p>We can run</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">git</span><span> status
+</span></code></pre>
+<p>to see the commits.</p>
+<p>Note: You can actually write a git repo anywhere you have access.</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">rm</span><span style="font-style:italic;color:#ffb86c;"> -rf</span><span> .git
+</span></code></pre>
+<p>Will remove any trace of the git repository, <u>r</u>ecursively and <u>f</u>orcefully.</p>
+<h4 id="tracking-changes">Tracking changes</h4>
+<p>If you are using the terminal-based text editor <code>nano</code>, <kbd>Ctrl</kbd> + <kbd>O</kbd> = write <u>O</u>ut = save.</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">git</span><span> add </span><span style="color:#ff79c6;">&lt;</span><span>filename</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<p>The previous command gives tracking file.  It tells git that yo u are "staging" that file.  Staging is the area where you're telling <code>git</code> to track.</p>
+<ul>
+<li><code>git commit</code> actually <em>tracks</em> the file.  Each commit has a unique hash code, often shortened because it can be, for ease of reference.</li>
+<li><code>git log</code> helps to see what you have committed in the past.</li>
+<li><code>nano &lt;file&gt;</code> = edit file</li>
+<li><code>git diff</code> = difference (looks at changes)
+<ul>
+<li><code>-a /&lt;file&gt;</code> (initial)</li>
+<li><code>+</code> [added]</li>
+<li><code>b /&lt;file&gt;</code> (final)</li>
+</ul>
+</li>
+<li><code>git diff --stages</code></li>
+<li><code>git log -1</code> = last log notes
+<ul>
+<li>E.g.,</li>
+<li><code>git log --oneline --graph --all --decorate</code></li>
+</ul>
+</li>
+</ul>
+<p>So what we do:</p>
+<ol>
+<li>We write some changes to our code</li>
+<li><code>git log</code></li>
+<li><code>git diff</code></li>
+<li><code>git commit -m "commit message (something helpful to read later)"</code></li>
+<li><code>git log</code></li>
+</ol>
+<ul>
+<li><code>mkdir &lt;dir&gt;</code> → <code>git add &lt;dir&gt;</code>
+<ul>
+<li>This does not track the directory!  Low key because it doesn't actually need to.</li>
+<li>
+<blockquote>
+<p>I didn't elaborate on this at the time, but I beleive this is because it tracks all of the <em>files</em> within the directory.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><code>HEAD</code> = last change you committed</li>
+<li><code>git diff HEAD &lt;file&gt;</code> = last change
+<ul>
+<li><code>git diff HEAD ~n &lt;file&gt;</code> = number of changes you want to go back to</li>
+</ul>
+</li>
+</ul>
+<p>But what if you have lots of these changes?  This is where hash codes are useful!:</p>
+<ul>
+<li>
+<p><code>git diff &lt;hash code&gt;</code></p>
+</li>
+<li>
+<p><code>git checkout -- mars.txt</code> = goes back to a previous version (similar to <code>rm</code>, so be careful!).</p>
+</li>
+<li>
+<p><code>git &lt;cmd&gt; --help</code> is equivalent to <code>man &lt;git cmd&gt;</code>.</p>
+</li>
+</ul>
+<p>Recall that <code>touch</code> creates an empty file.  <code>nano .gitignore</code> creates a hidden file (by <code>.</code>).</p>
+<ul>
+<li><code>git add -f &lt;file&gt;</code> to overwrite ignored files (in <code>.gitignore</code>).</li>
+<li><code>git status --ignored</code> tells us what we have ignored.</li>
+</ul>
+<p>An important note: <code>git</code> ≠ GitHub.</p>
+<ul>
+<li><code>git</code> is the tool that we have been using</li>
+<li>GitHub is a web service that allows people to collaborate through somewhere.  Other such web services include GitLab, BitBucket, etc.</li>
+</ul>
+<blockquote>
+<p>These are some notes on changing my bash prompt, and other things, after day 2...
+To change your prompt:</p>
+<blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">sudo</span><span> nano /etc/bashrc </span><span style="color:#6272a4;"># or use your favourite text editor
+</span></code></pre>
+<blockquote>
+<p>This is actually wrong, in hindsight.  You change the <code>$HOME/.bashrc</code> file...
+Then type</p>
+</blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">export </span><span style="color:#ffffff;">PS1</span><span style="color:#ff79c6;">=</span><span style="color:#f1fa8c;">&quot;&lt;desired prompt&gt;&quot;
+</span></code></pre>
+</blockquote>
+<p>To list colour codes in their respective colours, I ran this loop:</p>
+<blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">for</span><span> colour </span><span style="color:#ff79c6;">in </span><span>{1..255} </span><span style="color:#6272a4;"># this is a sequence of integers from 1 to 255 inclusive
+</span><span>    </span><span style="color:#ff79c6;">do </span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-en </span><span style="color:#f1fa8c;">&quot;\033[38;5;${</span><span style="color:#ffffff;">colour</span><span style="color:#f1fa8c;">}m38;5;${</span><span style="color:#ffffff;">colour</span><span style="color:#f1fa8c;">}\n&quot;
+</span><span style="color:#ff79c6;">done | </span><span style="color:#50fa7b;">column</span><span style="font-style:italic;color:#ffb86c;"> -x
+</span></code></pre>
+</blockquote>
+<p>Let me attempt to explain this.  <code>echo</code> prints "<what is in quotes>".  The <code>-n</code> option for echo tells the command not to print the trailing new line characters.  The <code>-e</code> option for echo tells the echo command that within the argument there is an escape code.  In our case, our escape code is <code>\033</code>, which in turn tells bash that whatever succeeding that, between <code>[</code> and <code>m</code>, should be ignored as a string.  In our case, we get that</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-en </span><span style="color:#f1fa8c;">&quot;\033[&lt;u&gt;           &lt;/u&gt;m&lt;u&gt;           &lt;/u&gt;&quot;
+</span></code></pre>
+<p>This is our text formatting code, which tells whatever follows after <code>m</code> and before the closing <code>"</code> what colour to be.  Finally, (*) writes out the colour code [sic].</p>
+<p>We have this embedded in a loop for all numbers in 1–255.</p>
+<p>The <code>\n</code> at the end of echo creates a new line.</p>
+<blockquote>
+<p>Note: I now realise that the <code>-n</code> is redundant when we are adding <code>\n</code> anyway...</p>
+</blockquote>
+<p>I also discovered the command</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">tput
+</span></code></pre>
+<p>for colours.  I'm not sure how this works with bold, but I have the following:</p>
+<blockquote>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ff79c6;">for</span><span> colour </span><span style="color:#ff79c6;">in </span><span>{1..256}
+</span><span>    </span><span style="color:#ff79c6;">do </span><span style="color:#8be9fd;">echo </span><span style="font-style:italic;color:#ffb86c;">-en </span><span style="color:#f1fa8c;">&quot;$(</span><span style="color:#50fa7b;">tput</span><span style="color:#f1fa8c;"> setaf ${</span><span style="color:#ffffff;">colour</span><span style="color:#f1fa8c;">})</span><span style="color:#ff79c6;">\$</span><span style="color:#f1fa8c;">(tput setaf ${</span><span style="color:#ffffff;">colour</span><span style="color:#f1fa8c;">})\n&quot;
+</span><span style="color:#ff79c6;">done | </span><span style="color:#50fa7b;">column</span><span style="font-style:italic;color:#ffb86c;"> -x
+</span><span style="color:#8be9fd;">echo
+</span></code></pre>
+</blockquote>
+</blockquote>
+<h3 id="git-continued-with-wes-harrell-now">Git continued (with Wes Harrell, now)</h3>
+<p>GitHub allows you to share your changes with other people.</p>
+<ul>
+<li><code>pull</code> requests exist (allows people to suggest changes).</li>
+<li>Password-less identification</li>
+<li><code>git push</code></li>
+<li><code>git pull</code></li>
+<li>Merge conflicts can sometimes happen!  Conflict resolution is not easy—sometimes it takes hours, or even days—but <code>git</code> gives you the tools to do this.</li>
+</ul>
+<blockquote>
+<p>Note: these are some notes I made about the night before, and changing my prompt</p>
+<blockquote>
+<p>I had a bit of trouble last night when trying to change <code>.bashrc1 to include </code>PS1` by</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">nano</span><span> .bashrc
+</span></code></pre>
+<p>and restarting terminal, it would only update typing</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;">exec</span><span> bash
+</span></code></pre>
+<p>So then I went into</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">/etc/bashrc
+</span><span>
+</span></code></pre>
+</blockquote>
+</blockquote>
+
+</article>
+
+<section class="pagination">
+	<a href="https://jakewilliami.github.io/crossword/" class="left arrow">&#8592;</a>
+	<a href="#" class="top">Top</a>
+	<a href="https://jakewilliami.github.io/fumbling-with-julia-1-2-0/" class="right arrow">&#8594;</a>
+</section>
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>

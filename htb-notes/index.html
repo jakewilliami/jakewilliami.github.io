@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+<article class="post">
+	<section class="post-info">
+		
+		<span>on&nbsp;</span><time datetime="2021-02-24">Wednesday, 24 February, 2021</time>
+	</section>
+	<h1 class="post-title">
+      General notes on HackTheBox
+    </h1>
+	<section class="post-line"></section>
+	<h2 id="beginning-notes">Beginning Notes</h2>
+<p><a href="https://hackthebox.eu/">HackTheBox</a> (HTB) is a great tool to learn penetration testing (pentesting).  However, some other useful ones exist, such as <a href="https://tryhackme.com">TryHackMe</a> (which also has a nice <a href="https://tryhackme.com/path/outline/beginner">beginner guide</a>, as well as <a href="https://checkout.ine.com/starter-pass">INE (pathway for free)</a>, and <a href="https://owasp.org/www-project-juice-shop/">JuiceShop</a>.  Also, CTF (capture the flag) games exist (e.g., <a href="https://ctf.hacker101.com/">here</a>), as well as <a href="https://www.vulnhub.com/">VulnHub</a>, if you are not ready for HTB.  You will also need a good amount of knowledge of <code>bash</code> and <code>powershell</code>.  This has come from experience with me, using Linux and doing general sysadmin stuff.  Familiarity and comfortablilty with the command line is almost essential, but you will become familiar soon enough if you don't have that yet.</p>
+<p>For getting started with HTB, first, get some helpful tools:</p>
+<ul>
+<li><code>python-python3</code></li>
+<li><code>python-pip3</code></li>
+<li><code>nmap</code></li>
+<li><code>arpscan</code></li>
+<li><code>netcap</code> (or <code>nc</code>)</li>
+<li><code>saclist</code></li>
+<li><a href="https://1gbits.com/blog/install-searchsploit-on-kali-linux/"><code>searchsploit</code></a></li>
+<li>Burp Suite</li>
+<li><a href="https://github.com/SecureAuthCorp/impacket"><code>mssqlclient.py</code></a></li>
+<li><a href="https://github.com/ffuf/ffuf"><code>ffuf</code></a> or <a href="https://github.com/OJ/gobuster"><code>gobuster</code></a> or <a href="https://github.com/maurosoria/dirsearch.git"><code>dirsearch.py</code></a></li>
+<li>WireShark or <code>tcpdump</code></li>
+<li><code>ss</code> (or <code>netstat</code> for macOS)</li>
+<li>Hydra (for brute force)</li>
+</ul>
+<p>You will also need a virtual machine (See <a href="https://www.virtualbox.org/">VirtualBox</a>), preferably running Linux (do not use Windows; use <a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/#1572305786534-030ce714-cc3b">Kali</a> if possible), and <a href="https://www.hackthebox.eu/home/start">HTB's VPN</a> given to you to use.  <em>Ensure you run <code>openvpn</code> on the VM, <strong>not</strong> your base computer, as running it on your computer and then running the VM will not allow any <code>tun</code> connection.</em>  (This took me a hot minute to figure out...).  These steps will give you good tools to hack, as well as protect your network and your computer.</p>
+<p>It looks like you can also set this up <a href="https://amar-laksh.github.io/2019/08/24/Setting-up-Kali-docker-for-HackTheBox.html">inside Docker instead</a> (just make sure to run <code>brew install --cask docker</code> first):</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> brew install</span><span style="font-style:italic;color:#ffb86c;"> --cask</span><span> docker
+</span><span style="color:#50fa7b;">$</span><span> open /Applications/Docker.app
+</span><span style="color:#50fa7b;">$</span><span> docker pull kalilinux/kali-rolling
+</span><span style="color:#50fa7b;">$</span><span> docker run</span><span style="font-style:italic;color:#ffb86c;"> -t -i</span><span> kalilinux/kali-rolling /bin/bash
+</span><span style="color:#50fa7b;">root💀2cf5de3321a6:/#</span><span> apt-get update </span><span style="color:#ff79c6;">&amp;&amp; </span><span style="color:#50fa7b;">apt-get</span><span> install metasploit-framework
+</span></code></pre>
+<p>To set Burp Suite up with a browser (say, Firefox), go into FF and go to Preferences &gt; Network Settings &gt; Settings.  Now select Manual proxy configuration, and put in the HTTP Proxy box <code>127.0.0.1</code>, with port <code>8080</code>.  Now your browser will be configured to Burp Suite, and you don't have to use their even laggier embedded Chromium browser.</p>
+<p>Burp sits between your browser and the website, so now if you try to go onto a website, it will intercept the traffic in Burp Suite, under the Proxy tab.</p>
+<h2 id="where-to-start">Where to Start</h2>
+<p>First, I have noticed three main steps in HTB:</p>
+<ol>
+<li>Gain a foothold—: you will fumble around in the dark for a while until you have a foothold on the system.  This may look like a reverse shell, or something similar.</li>
+<li>Gain user access—: you gain access to a user of the system from said foothold.  You're nearly there!</li>
+<li>Gain root access—: this is the final goal, and you are in!</li>
+</ol>
+<p>One great way to start your pentesting journey is to have a look at some walkthroughs for HTB.  Whether they are blogs or videos, this will give you a good understanding of the kind of workflow used to approach this task</p>
+<p>First, if you have an IP address of the machine you want to try to hack, start by pinging the machine.</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">ping</span><span> 10.10.xx.xx
+</span></code></pre>
+<p>If it is responding to pings, you can try some <code>nmap</code> commands.  See the Quick Reference section for more <code>nmap</code> functionality.</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">nmap</span><span style="font-style:italic;color:#ffb86c;"> -sV -sC</span><span> 10.10.xx.xx
+</span></code></pre>
+<p>(An alternative to this on linux is <code>ss -tulnp</code> (or <code>ss --tcp --udp --listening --numeric --processes</code>); or <a href="https://superuser.com/questions/724712/what-is-the-equivalent-of-ss-for-mac">equivalently for macOS</a>, <code>netstat -tuln --program</code> (or <code>netstat --tcp --udp --listening --numeric --program</code>; or <a href="https://apple.stackexchange.com/questions/157893/what-is-the-equivalent-of-netstat-tln-on-os-x"><code>sudo lsof -iTCP -sTCP:LISTEN -P</code></a>).</p>
+<p>This will take a minute to load, and then looks through the top 1000 ports for this machine, and shows us if any of them are open for use.</p>
+<p>A lot will come up on the screen.  Maybe one of the first things you will notice is one of the open ports is FTP, and maybe HTTP.</p>
+<p>Consider editing <code>/etc/hosts</code> to add the IP address of the machine:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>10.10.xx.xx		some_name
+</span></code></pre>
+<p>Now you can go to <code>http://some_name:&lt;port&gt;</code>, if one of the ports from the <code>nmap</code> commands are open.</p>
+<p>This now might show something!  For example, it might allow you to upload "images".  See if you can upload a PHP file instead...  However, it is always good to "View Page Source" to see if you can find anything interesting off the bat.</p>
+<p>One of the simplest ways to get information is to look up <code>&lt;something&gt; exploit</code> to see if you know anything about exploiting the webpage.  For example, if the webpage uses a converter, see if there is a converter exploit.  If there is, append your search with <code>git</code>, as you then might find something on GitHub.</p>
+<p>Look to get a reverse shell.</p>
+<h2 id="quick-reference">Quick reference</h2>
+<h3 id="enumeration">Enumeration</h3>
+<p>Take some time to understand how <code>nmap</code> works and why it was written.  That being said, here are some helpful quick tools using <code>nmap</code>.</p>
+<h4 id="nmap-short-quick-syn-scan"><code>nmap</code> short, quick SYN scan</h4>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">nmap</span><span style="font-style:italic;color:#ffb86c;"> -sC -sV -O -p- -oA</span><span> nmap/full </span><span style="color:#ff79c6;">&lt;</span><span>IP</span><span style="color:#ff79c6;">&gt; </span><span style="color:#6272a4;"># full scan
+</span><span style="color:#50fa7b;">nmap</span><span style="font-style:italic;color:#ffb86c;"> -sV -sC -oA</span><span> nmap </span><span style="color:#ff79c6;">&lt;</span><span>ip</span><span style="color:#ff79c6;">&gt; </span><span style="color:#6272a4;"># top 1000 ports
+</span><span style="color:#50fa7b;">nmap</span><span style="font-style:italic;color:#ffb86c;"> -sC -sV -v -oN</span><span> nmap.txt </span><span style="color:#ff79c6;">&lt;</span><span>IP</span><span style="color:#ff79c6;">&gt;
+</span><span style="color:#50fa7b;">masscan</span><span style="font-style:italic;color:#ffb86c;"> -e</span><span> tun0</span><span style="font-style:italic;color:#ffb86c;"> -p1-65535 --rate</span><span style="color:#ff79c6;">=</span><span>1000 </span><span style="color:#ff79c6;">&lt;</span><span>IP</span><span style="color:#ff79c6;">&gt;
+</span><span style="color:#50fa7b;">sudo</span><span> nmap</span><span style="font-style:italic;color:#ffb86c;"> -sU -sV -A -T4 -v -oN</span><span> udp.txt </span><span style="color:#ff79c6;">&lt;</span><span>IP</span><span style="color:#ff79c6;">&gt;
+</span><span style="color:#50fa7b;">nmap</span><span style="font-style:italic;color:#ffb86c;"> -T4 -p- -A </span><span style="color:#ff79c6;">&lt;</span><span>IP</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<h2 id="metasploit">Metasploit</h2>
+<p>There are various key words used when using metasploit.  (See <a href="https://www.youtube.com/watch?v=8lR27r8Y_ik">here</a> for reference.)</p>
+<ul>
+<li>exploits: A module that will take advantage of a system's vulnerability;</li>
+<li>payloads: Exploits will install a payload on a system (usually a reverse shell or an interpretter), giving one access to the computer being exploited;</li>
+<li>auxiliary;</li>
+<li>nops;</li>
+<li>post;</li>
+<li>encoders.</li>
+</ul>
+<p>Here are some basic commands for <code>msfconsole</code>:</p>
+<ul>
+<li><code>help</code>: Self evident; displays help;</li>
+<li><code>use</code>: Allows you to load a module;
+<ul>
+<li>e.g., <code>use exploit/windows/browser/adobe_flash_avm2</code>;</li>
+<li>Once using the module;
+<ul>
+<li>You can use the <code>show</code> command to give information about the module;</li>
+<li>You can use the <code>show options</code> command to display what options you can change about this explot;
+<ul>
+<li>After running <code>show options</code>, you can use the <code>set</code> command to set the options;</li>
+</ul>
+</li>
+<li><code>show payloads</code> will give you the different ways of approaching the attack;</li>
+<li><code>show targets</code> will display the possible targets; you can even specify many targets;</li>
+<li><code>show info</code> will give you information about the exploit you are using;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>search</code>: finding the right module is probably the most important part of using metasploit, so this is very important; it has some important keywords that it comes with:
+<ul>
+<li><code>platform</code> is used to target platform specifically;</li>
+<li><code>type</code> will allow you to specify the type of module (for example, exploits, payloads, etc.);</li>
+<li><code>name</code> allows you to specify what you are searching for, by name;</li>
+<li>e.g., <code>search type:exploit platform:windows microsoft sql</code>;</li>
+</ul>
+</li>
+</ul>
+<h2 id="misc-notes">Misc Notes</h2>
+<ul>
+<li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings">Payload of all things</a>;</li>
+<li><a href="https://github.com/7h3rAm/writeups">This is cool</a>.  As is <a href="https://github.com/Purp1eW0lf/HackTheBoxWriteups/">this</a>.</li>
+<li><pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">netcap</span><span style="font-style:italic;color:#ffb86c;"> -lvnp</span><span> 5353
+</span></code></pre>
+</li>
+<li>See also <a href="https://medium.com/bug-bounty-hunting/beginner-tips-to-own-boxes-at-hackthebox-9ae3fec92a96">here</a>.</li>
+<li>Burp Suite is a great GUI for intercepting and altering <code>HTTP</code> requests, but be warned: complex GUI applications run in a VM on 1 GM RAM are lagging at best.  Be prepared for 2 FPS.  Same can be said for the browser, I suppose.  I would like to save up for a machine with more RAM to allocate to my VM...</li>
+<li>FTB traffic is generally not encrypted.</li>
+<li><a href="https://drt.sh/">This</a> is such a nice website.</li>
+</ul>
+
+</article>
+
+<section class="pagination">
+	<a href="https://jakewilliami.github.io/htb-passage/" class="left arrow">&#8592;</a>
+	<a href="#" class="top">Top</a>
+	<a href="https://jakewilliami.github.io/htb-oopsie/" class="right arrow">&#8594;</a>
+</section>
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>

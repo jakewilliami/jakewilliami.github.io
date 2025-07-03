@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://jakewilliami.github.io/main.css">
+  <title>Jake W. Ireland&#x27;s Blog</title>
+  <meta name="description" itemprop="about" content="Blog for J. W. Ireland; computer programmer, psychologist, and mathematician">
+
+  
+  <link rel="icon" type="image/x-icon" href="https://jakewilliami.github.io/assets/icons/favicon-dark.ico">
+  <link rel="apple-touch-icon" href="https://jakewilliami.github.io/assets/icons/apple-touch-icon-dark.png">
+  
+
+  
+  <link type="application/atom+xml" rel="alternate"
+    href="https://jakewilliami.github.io/atom.xml"
+    title="Jake W. Ireland&#x27;s Blog" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" />
+
+  
+
+</head>
+
+
+<body>
+  <section class='darkmode'>
+  <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+  <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon"
+      x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+      <title>Change to dark mode</title>
+      <path
+        d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+    </svg>
+  </label>
+  <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon"
+      x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+      <title>Change to light mode</title>
+      <path
+        d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+    </svg>
+  </label>
+</section>
+
+<style>
+  .darkmode {
+    display: inline-block;
+
+    &>.toggle {
+      display: none;
+      box-sizing: border-box;
+    }
+
+    & svg {
+      opacity: 0;
+      width: 20px;
+      height: 20px;
+      fill: var(--gray);
+      transition: opacity 0.1s ease;
+      cursor: pointer;
+    }
+
+    .toggle:checked~label {
+      &>#dayIcon {
+        opacity: 0;
+        display: none;
+      }
+
+      &>#nightIcon {
+        opacity: 1;
+        filter: invert(1);
+      }
+    }
+
+    .toggle:not(:checked)~label {
+      &>#dayIcon {
+        opacity: 1;
+      }
+
+      &>#nightIcon {
+        opacity: 0;
+        display: none;
+      }
+    }
+</style>
+
+<script>
+  const userPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  const currentTheme = localStorage.getItem('theme') ?? userPref
+  const syntaxTheme = document.querySelector("#theme-link");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('saved-theme', currentTheme);
+  }
+
+  const switchTheme = (e) => {
+    if (e.target.checked) {
+      document.documentElement.setAttribute('saved-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    else {
+      document.documentElement.setAttribute('saved-theme', 'light')
+      localStorage.setItem('theme', 'light')
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    // Darkmode toggle
+    const toggleSwitch = document.querySelector('#darkmode-toggle')
+
+    // listen for toggle
+    toggleSwitch.addEventListener('change', switchTheme, false)
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true
+    }
+  })
+
+</script>
+
+
+<nav class="nav">
+  <section class="nav-container">
+
+    <a href="https://jakewilliami.github.io/">
+      <h2 class="nav-title">Jake W. Ireland&#x27;s Blog</h2>
+    </a>
+    <ul>
+      
+      
+      <li><a href="https://jakewilliami.github.io/about">About</a></li>
+      
+    </ul>
+  </section>
+</nav>
+
+
+  <main>
+    
+
+
+
+<section class="catalogue">
+	<a href="https://jakewilliami.github.io/blue-team-vs-red-ream/" class="catalogue-item">
+  <section>
+    <time datetime="2021-04-20" class="catalogue-time">Tuesday, 20 April, 2021</time>
+    <h1 class="catalogue-title">
+      Blue team versus red team
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>In preparation for my interview tomorrow in information security, I have been listening to some podcasts on information securit.  I think one of the biggest things you can do in information security is stay connected with new information and others in the field.  But one thing th…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/uri-vs-url/" class="catalogue-item">
+  <section>
+    <time datetime="2021-04-20" class="catalogue-time">Tuesday, 20 April, 2021</time>
+    <h1 class="catalogue-title">
+      URI versus URL
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>This is a trivial blog post for some, but an interesting distinction that I didn't know about until recently.
+Oftentimes, one can usually infer the meaning of a word from the context of its use, given plenty of exposure to it, and assuming the author is coherent.  However, for me…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/htb-ready/" class="catalogue-item">
+  <section>
+    <time datetime="2021-04-12" class="catalogue-time">Monday, 12 April, 2021</time>
+    <h1 class="catalogue-title">
+      HackTheBox Write-up—Ready
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>This machine has IP 10.10.10.220.
+Let's use nmap to enumerate the ports available to us:
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-04-12 19:36 NZST
+Nmap scan report for 10.10.10.220
+Host is up (0.28s latency).
+Not shown: 998 closed ports
+PORT     STATE SERVICE VERSION
+22/tc…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/perfect-powers/" class="catalogue-item">
+  <section>
+    <time datetime="2021-03-28" class="catalogue-time">Sunday, 28 March, 2021</time>
+    <h1 class="catalogue-title">
+      Perfect Power Checker in Julia
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>A perfect power is an integer \(m\) whose \(n^\text{th}\) root is an integer \(a\).  That is,&mdash;
+$$
+  m = a^n
+$$
+For a very long time, intermittently, I have been trying to write an efficient function to check if a number is a perfect power or not.  It's been about 5 months n…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/htb-archetype/" class="catalogue-item">
+  <section>
+    <time datetime="2021-03-22" class="catalogue-time">Monday, 22 March, 2021</time>
+    <h1 class="catalogue-title">
+      HackTheBox Write-up—Archetype
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>I am going to have a quick night of attempting the "Starting Point" machines in HackTheBox.  These machines I didn't see when I first started using HackTheBox, but they seem to be valuable in understanding the usual layout of these kinds of machines.  I think they are of a common…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/htb-oopsie/" class="catalogue-item">
+  <section>
+    <time datetime="2021-03-22" class="catalogue-time">Monday, 22 March, 2021</time>
+    <h1 class="catalogue-title">
+      HackTheBox Write-up—Oopsie
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>This machine is found at IP 10.10.10.28, and was quite fun to hack.
+The Short Version
+
+Enumerate ports via nmap -sC -sV 10.10.10.28. Notice an HTTP server at port 80;
+Go to http://10.10.10.28:80/cdn-cgi/login/;
+Log into the website using the username admin and the password MEGACO…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/htb-notes/" class="catalogue-item">
+  <section>
+    <time datetime="2021-02-24" class="catalogue-time">Wednesday, 24 February, 2021</time>
+    <h1 class="catalogue-title">
+      General notes on HackTheBox
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>Beginning Notes
+HackTheBox (HTB) is a great tool to learn penetration testing (pentesting).  However, some other useful ones exist, such as TryHackMe (which also has a nice beginner guide, as well as INE (pathway for free), and JuiceShop.  Also, CTF (capture the flag) games exist…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/htb-passage/" class="catalogue-item">
+  <section>
+    <time datetime="2021-02-24" class="catalogue-time">Wednesday, 24 February, 2021</time>
+    <h1 class="catalogue-title">
+      HackTheBox Write-up—Passage
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>WARNING: This is my first "hack"; as such, I change tack a couple of times, and it is messy...
+This machine is currently active, and is my first attempt at HTB.  Its IP address is 10.10.10.206.
+The Short Version
+
+Run nmap -sC -sV 10.10.10.206 to get the open ports;
+Run echo "10.1…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/iterm256-approx-colours/" class="catalogue-item">
+  <section>
+    <time datetime="2021-01-24" class="catalogue-time">Sunday, 24 January, 2021</time>
+    <h1 class="catalogue-title">
+      Approximating GitHub Language Colours in iTerm-256 Colour Terminal
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>When I first made ls.py, as a good exercise to teach me programming, I went through GitHub and manually tried to match colours.
+Today, I ported a script to convert RGB tuples to iTerm-256 approximations into Julia.
+With a quick Julia command call, you can actually take the inform…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/setting-up-gh-ci-and-deploy-docs-jl/" class="catalogue-item">
+  <section>
+    <time datetime="2021-01-12" class="catalogue-time">Tuesday, 12 January, 2021</time>
+    <h1 class="catalogue-title">
+      Setting up CI on GitHub Actions, and deploying docs for Julia
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>I didn't know this when I first started learning Julia, but if you write a function; e.g.
+function my_sum(a::T...) where {T &lt;: Number}
+    return reduce(+, a)
+end
+
+If you add a string immediately before the function definition:
+&quot;This is my bad version of a sum function be…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/increasing-trackpad-speed-more-than-maximum-mac/" class="catalogue-item">
+  <section>
+    <time datetime="2019-11-06" class="catalogue-time">Wednesday, 6 November, 2019</time>
+    <h1 class="catalogue-title">
+      Increasing trackpad speed on a Mac more than the maximum allowed
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>You can increase trackspeed in System Preferences, but that only goes up so far.
+To see the current speed, you run
+defaults read -g com.apple.trackpad.scaling
+
+Initially, this outputted in 0.6875.
+To change it, you need to run
+defaults write -g com.apple.trackpad.scaling &lt;numb…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/creating-bootable-usb-drive/" class="catalogue-item">
+  <section>
+    <time datetime="2019-11-02" class="catalogue-time">Saturday, 2 November, 2019</time>
+    <h1 class="catalogue-title">
+      Steps to create a bootable USB drive for Linux
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>These steps work near-flawlessly on a OSX operating system to create Linux bootable drives.
+
+Download the ISO (or torrent, and extract the ISO);
+Erase USB using Disk Utility application.  It should be Mac OS Extended (Journaled) and GUID Partition Map;
+Run diskutil list to get th…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/resetting-old-mac-computer-passwords/" class="catalogue-item">
+  <section>
+    <time datetime="2019-10-30" class="catalogue-time">Wednesday, 30 October, 2019</time>
+    <h1 class="catalogue-title">
+      Resetting old mac computer passwords
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>We are going to cover two methods to do this in this little section.
+The first method works for &gt; 10.5 version.  It works by resetting keychain.  Reboot and press ⌘ + S.  Now in terminal, type
+
+mount -uw /
+launchctl load /System/Library/LaunchDaemons/com/apple/DirectoryService…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/posterior-probability/" class="catalogue-item">
+  <section>
+    <time datetime="2019-10-18" class="catalogue-time">Friday, 18 October, 2019</time>
+    <h1 class="catalogue-title">
+      Understanding a little bit about Posterior Probability
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>$$
+\text{Pr}(p|W,N)=\frac{\text{Pr}(W|N,p)\text{Pr}(p)}{\sum\text{Pr}(W|N,p)\text{Pr}(p)\forall p}
+$$
+$$
+\text{Posterior}=\frac{(\text{Prob. observed variables}\times(\text{Prior})}{\text{Normalising constant}}
+$$
+(Where the normalising constant standardises it).  The probability…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/playing-with-old-mac-computers/" class="catalogue-item">
+  <section>
+    <time datetime="2019-10-16" class="catalogue-time">Wednesday, 16 October, 2019</time>
+    <h1 class="catalogue-title">
+      Playing with old mac computers
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>My 2008 iMac had a flashing lock symbol on it when I turned it on.
+Using results from here, here, and here, I fixed it!  (Well, kind of.  It didn't work with El Cap., but worked with Mavericks).  After about a year or finding "solutions" online not to work, this is all it took? (…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/custom-brackets-syntax-highlighting/" class="catalogue-item">
+  <section>
+    <time datetime="2019-10-13" class="catalogue-time">Sunday, 13 October, 2019</time>
+    <h1 class="catalogue-title">
+      Custom File Extension Automatic Syntax Highlighting in Brackets
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>I spend a little bit of time today just trying to get custom file extensions to automatically syntax highlight in Brackets.app.  This problem came about because I kept opening my shell scripts, which didn't have extensions for ease-of-calling, but it would open as Plain Text "syn…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/pdfsearches/" class="catalogue-item">
+  <section>
+    <time datetime="2019-10-07" class="catalogue-time">Monday, 7 October, 2019</time>
+    <h1 class="catalogue-title">
+      PDF Searching Programmes
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>I am trying to write some programmes to search PDFs from directories.
+I am hoping to use:
+
+Bash
+Python
+Perl
+Ruby
+
+I have done the first two, and am timing them now (from ~/Desktop/Study/.../2018/Tri\ 2/, searching for allport):
+BashPython
+49.80 seconds119.56 seconds
+42.87 seconds…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/fumbling-with-julia-1-2-0/" class="catalogue-item">
+  <section>
+    <time datetime="2019-09-18" class="catalogue-time">Wednesday, 18 September, 2019</time>
+    <h1 class="catalogue-title">
+      Fumbling with Julia 1.2.0
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>I was first told about Julia very recently by a friend from mathematics class.  He told me that it is very good for maths, but not very well known.
+Disclaimer: this little post is transcribed verbatim from my notebook.  Current Jake cannot necessarily verify the correctness of so…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/first-notes-on-unix-etc/" class="catalogue-item">
+  <section>
+    <time datetime="2019-08-19" class="catalogue-time">Monday, 19 August, 2019</time>
+    <h1 class="catalogue-title">
+      First Notes from a UNIX, Git and R Workshop
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>Though I had expressed in my first notebook, in late 2018 at nerve.fancy.chained, that I wanted to "learn terminal" (I obviously didn't know what "terminal" was...), and though I had used ample Excel over the summer of 2018--2019 working in Sue Schenk's lab., I didn't actually do…</p>
+  </section>
+</a><a href="https://jakewilliami.github.io/crossword/" class="catalogue-item">
+  <section>
+    <time datetime="2019-08-13" class="catalogue-time">Tuesday, 13 August, 2019</time>
+    <h1 class="catalogue-title">
+      A <em>Cuppa</em>-themed Crossword
+    </h1>
+    <section class="catalogue-line"></section>
+    <p>What follows is a cryptic crossword puzzle.  The contest was between Z. and myself.  Written by K., the first to complete this puzzle was the recipient of K.'s Again Again cup.  I was victorious.
+
+</p>
+  </section>
+</a>
+</section>
+
+
+  </main>
+
+  <footer>
+
+  <span class="copyright">
+    &copy; 2020&ndash;2024 Jake W. Ireland. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+  </span>
+
+  <nav class="navigation-footer">
+    <ul>
+      <li><a href="https://github.com/jakewilliami">GitHub</a></li>
+      <li><a href="https://twitter.com/JakeWIreland">Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/jake-ireland-nz/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+
+</html>
