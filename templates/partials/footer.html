@@ -1,7 +1,7 @@
 <footer>
 
   <span class="copyright">
-    &copy; 2020&ndash;2024 {{ config.extra.author | default(value="Jake W. Ireland")}}. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
+    &copy; 2020&ndash;{{ now() | date(format="%Y") }} {{ config.extra.author | default(value="Jake W. Ireland")}}. Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://github.com/semanticdata/mabuya">Mabuya</a>/<a href="https://github.com/aaranxu/tale-zola">Tale</a>; inspired by <a href="https://github.com/nielsenramon/chalk">Chalk</a>.
   </span>
 
   <nav class="navigation-footer">
