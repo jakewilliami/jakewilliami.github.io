@@ -12,7 +12,7 @@
       <li><a href="{{ get_url(path=menu.url) | safe }}">{{ menu.name }}</a></li>
       {% endfor %}
       {% else %}
-      {# <li><a href="{{ config.base_url | safe }}">Posts</a></li> #}
+      <li><a href="{{ config.base_url | safe }}">Home</a></li>  {#  Alternatively call this link "Pages"  #}
       <li><a href="{{ get_url(path='about') | safe }}">About</a></li>
       {% endif %}
     </ul>
