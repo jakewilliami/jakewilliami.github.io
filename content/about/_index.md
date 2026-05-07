@@ -19,6 +19,6 @@ I am always learning, so if you have a piece of knowledge that you think I might
 # Contact me
 
 ```bash
-echo -n 'mailto:' && echo 'amFrZXdpbGxpYW1pQGljbG91ZC5jb20K' | base64 --decode
+echo -n 'mailto:' && echo 'amFrZS53LmlyZWxhbmRAaWNsb3VkLmNvbQ==' | base64 --decode
 ```
 
