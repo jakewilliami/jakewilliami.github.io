@@ -1,0 +1,2 @@
+jakewilliami.github.io is a small, infrequently-updated blog written by moi (Jake W. Ireland).  It is served by Zola and hosted on GitHub Pages.  It mainly covers topics I am interested in, including cyber security, software development, statistics, and human research.  A lot of the material is far from polished, but I think it best to be made available on the World Wide Web in the interest of knowledge sharing.  If you have any questions about any of the material on this blog, feel free to reach out to me on jakewilliami@icloud.com.
+

@@ -1,0 +1,10 @@
+# If you discover a vulnerability on this website, please let me know
+
+# Contact email address
+Contact: mailto:jakewilliami@icloud.com
+
+# We prefer communication in English
+Preferred-Languages: en
+
+# Expires periodically (annually)
+Expires: 2026-01-01T12:00:00Z
